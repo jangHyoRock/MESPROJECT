@@ -1,0 +1,72 @@
+<mvc:View
+	xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:t="sap.ui.table" 
+	xmlns:l="sap.ui.layout"
+	controllerName="tips.mes.controller.contents.Contents1">
+
+	<l:HorizontalLayout class="sapViewInner">
+		<l:content>
+			<VBox>
+				<!-- Title & Description Area -->
+				<l:HorizontalLayout class="titleArea">
+					<Text text="{i18n>contents1Title}" class="headCopy" />
+					<Text text="{i18n>contents1Description}" class="DescCopy" />
+				</l:HorizontalLayout>
+
+				<!-- Overview Content & Table Area -->
+				<l:HorizontalLayout class="contentArea1">
+					<!-- Card List & Chart -->
+					<VBox>
+						<!-- Card -->
+						<Text text="Warning List" class="subTitle" />
+						<!-- Card First -->
+						<l:HorizontalLayout class="cardItemUI">
+							<Text text="Revenue" />
+							<Text id="pm10_value" class="cardItemValue" />
+						</l:HorizontalLayout>
+
+					</VBox>
+					<!-- Table Area -->
+					<VBox>
+						<Text text="Detail Information" class="subTitle" />
+						<t:Table id="idTable" selectionMode="None" rows="{product>/milk}" visibleRowCount="12" width="100%">
+							<t:columns>
+								<t:Column resizable="true" hAlign="Center">
+									<Label text="Seasons" />
+									<t:template>
+										<Text text="{product>Seasons}"/>
+									</t:template>
+								</t:Column>
+								<t:Column resizable="true" hAlign="Center">
+									<Label text="Revenue" />
+									<t:template>
+										<Text text="{product>Revenue}"/>
+									</t:template>
+								</t:Column>
+								<t:Column resizable="true" hAlign="Center">
+									<Label text="Cost" />
+									<t:template>
+										<Text text="{product>Cost}"/>
+									</t:template>
+								</t:Column>
+								<t:Column resizable="true" hAlign="Center">
+									<Label text="Target" />
+									<t:template>
+										<Text text="{product>Target}"/>
+									</t:template>
+								</t:Column>
+								<t:Column resizable="true" hAlign="Center">
+									<Label text="Budget" />
+									<t:template>
+										<Text text="{product>Budget}"/>
+									</t:template>
+								</t:Column>
+							</t:columns>
+						</t:Table>
+					</VBox>
+				</l:HorizontalLayout>
+			</VBox>
+		</l:content>
+	</l:HorizontalLayout>
+</mvc:View>

@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'kr.co.tipsvalley'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	runtimeOnly    'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-quartz'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation("org.apache.hbase:hbase-client:2.0.5") {
+		exclude module: 'shared' // �듅�젙 �쓽議댁꽦�뿉 ���빐�꽑留� 紐⑤뱢 �젣�쇅. 
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    }
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'joda-time:joda-time:2.10.9'
+	
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	//compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
+	
+	
+}

@@ -1,0 +1,16 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    width="100%"
+    controllerName="tips.mes.controller.frame.Index">
+    
+    <ScrollContainer height="100%" class="resposiveMaster">
+    	<mvc:XMLView class="headerView" viewName="tips.mes.view.frame.Header"/>
+    	<HBox class="indexBox">
+			<mvc:XMLView id="leftView" class="leftView" viewName="tips.mes.view.frame.Left"/>
+			<App id="rootControl"/>
+    	</HBox>
+    </ScrollContainer>
+    
+</mvc:View>

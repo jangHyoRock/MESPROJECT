@@ -1,0 +1,7 @@
+.marginLeft5 {margin-left:5px;}
+.displayNone {display:none;}
+.absolute {position:absolute;}
+.fullWidth {width:100%;}
+.fullHeight {height:-webkit-fill-available;}
+.indexBox > div.sapMFlexItem:last-child {width:100%;}
+.pointer {cursor:pointer;}

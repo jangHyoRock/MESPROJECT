@@ -1,0 +1,10 @@
+<mvc:View width="200px"
+    xmlns="sap.tnt"
+    xmlns:m="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    controllerName="tips.mes.controller.frame.Left">
+
+	<m:ToggleButton class="marginLeft5" icon="sap-icon://menu2" pressed="true" press="onPressMenu" />
+    <SideNavigation id="sideNavigation" itemSelect="onSelect" />
+    
+</mvc:View>
