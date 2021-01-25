@@ -10,26 +10,12 @@ import lombok.Setter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MenuInfoRealJson
 {
-	public String getMenuid() {
-		return menu_id;
-	}
-	public void setMenuid(String menuid) {
-		this.menu_id = menuid;
-	}
-	@JsonProperty("id") private Long id;
 	@JsonProperty("menu_id") private String menu_id;
-	@JsonProperty("disp_order") private String disporder;
-	@JsonProperty("p_menu_id") private String pmenuid;
-	@JsonProperty("menu_name") private String menuname;
+	@JsonProperty("disp_order") private String disp_order;
+	@JsonProperty("p_menu_id") private String p_menu_id;
+	@JsonProperty("menu_name") private String menu_name;
 	@JsonProperty("icon") private String icon;
-	@JsonProperty("menu_desc") private String menudesc;
-
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@JsonProperty("menu_desc") private String menu_desc;
 
 	public String getMenuId() {
 		return menu_id;
@@ -38,26 +24,25 @@ public class MenuInfoRealJson
 		this.menu_id = menuid;
 	}
 	public String getDisporder() {
-		return disporder;
+		return disp_order;
 	}
 	public void setDisporder(String disporder) {
-		this.disporder = disporder;
+		this.disp_order = disporder;
 	}
 
 	public String getPmenuid() {
-		return pmenuid;
+		return p_menu_id;
 	}
 	public void setPmenuid(String pmenuid) {
-		this.pmenuid = pmenuid;
+		this.p_menu_id = pmenuid;
 	}
 	
 	//
-	
 	public String getMenuname() {
-		return menuname;
+		return menu_name;
 	}
 	public void setMenuname(String menuname) {
-		this.menuname = menuname;
+		this.menu_name = menuname;
 	}
 	//
 	public String getIcon() {
@@ -67,9 +52,9 @@ public class MenuInfoRealJson
 		this.icon = icon;
 	}
 	public String getMenudesc() {
-		return menudesc;
+		return menu_desc;
 	}
 	public void setMenudesc(String menudesc) {
-		this.menudesc = menudesc;
+		this.menu_desc = menudesc;
 	}
 }

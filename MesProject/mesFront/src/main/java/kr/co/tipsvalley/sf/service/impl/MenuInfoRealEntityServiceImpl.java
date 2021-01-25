@@ -37,21 +37,18 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
         for(MenuKhaiValueInfoReal menukhaiValueInfoRealEntity : menukhaiValueInfoRealByJPA)
         {
             MenuInfoRealJson menuInfoRealJsonObj = new MenuInfoRealJson();
-               
+           
             menuInfoRealJsonObj.setMenuId     (menukhaiValueInfoRealEntity.getMenuId());
             menuInfoRealJsonObj.setDisporder  (menukhaiValueInfoRealEntity.getDisporder());
             menuInfoRealJsonObj.setPmenuid    (menukhaiValueInfoRealEntity.getPmenuid());
             menuInfoRealJsonObj.setMenuname   (menukhaiValueInfoRealEntity.getMenuname());
             menuInfoRealJsonObj.setIcon       (menukhaiValueInfoRealEntity.getIcon());
             menuInfoRealJsonObj.setMenudesc   (menukhaiValueInfoRealEntity.getMenudesc());
-            
-            
-            
-            
+
             menuInfoRealJsonListObj.add(menuInfoRealJsonObj);
         }
         
-          
+
         menuInfoRealJsonList.setMenuInfoRealJsonList(menuInfoRealJsonListObj);
         
         return menuInfoRealJsonList;
