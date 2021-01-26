@@ -29,35 +29,30 @@ sap.ui.define([
 		// 메뉴 목록 콜백
 		callbackAjaxMenuInfo : function (oModel) {
 		console.log("callbackAjaxMenuInfo");
-			var oResult = oModel.getData();
+			var oResult = oModel.getData().result;
 			var _self = this;
 			var oRouter = this.getRouter();
 			
 			
-			var index =0;
-			var _rootView ="";
-			var _menuId ="";
 			
 			
-			for(var i=0;i<oResult.length;i++){
-			
-				if(oResult[i].pmenuid =="Main"){
+			oResult.forEach(function(oMenuInfo, index) {
+				var _rootView = _self.getOwnerComponent().getAggregation("rootControl").getId();
+				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
 				
-					var _rootView = _self.getOwnerComponent().getAggregation("rootControl").getId();
-					 _menuId = Formatter.formatFirstLowerCase(oResult[i].menuId);
-					
-					oRouter.getTargets().addTarget(_menuId, {viewName: oResult[i].menu_id, viewLevel: index+i, viewId: _menuId, rootView: _rootView});
-					oRouter.addRoute({name: _menuId, pattern: _menuId, target: _menuId});
+				oRouter.getTargets().addTarget(_menuId, {viewName: oMenuInfo.menu_id, viewLevel: index+1, viewId: _menuId, rootView: _rootView});
+				oRouter.addRoute({name: _menuId, pattern: _menuId, target: _menuId});
 				
-				}else if(oResult[i].pmenuid !="Main"){
-
-					var _subMenuId = _menuId + "." + oResult[i].menuId;
-					
-					oRouter.getTargets().addTarget(oResult[i].menuId, {viewName: _subMenuId, viewLevel: index+i, viewId: oResult[i].menuId, rootView: _rootView});
-					oRouter.addRoute({name: _subMenuId, pattern: _menuId + "/" + oResult[i].menuId, target: oResult[i].menuId});
+				if(oMenuInfo.sub_menu) {
+					oMenuInfo.sub_menu.forEach(function(item) {
+						var _subMenuId = _menuId + "." + item.menu_id;
+						oRouter.getTargets().addTarget(item.menu_id, {viewName: _subMenuId, viewLevel: index+1, viewId: item.menu_id, rootView: _rootView});
+						oRouter.addRoute({name: _subMenuId, pattern: _menuId + "/" + item.menu_id, target: item.menu_id});
+					});
 				}
-			}
-						
+			});
+			
+			
 			oRouter.initialize();
 			
 			window.index.menuList = oResult;
