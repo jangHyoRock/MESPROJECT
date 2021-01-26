@@ -1,6 +1,6 @@
 package kr.co.tipsvalley.sf.model;
 
-public interface MenuKhaiValueInfoReal {
+public interface MenuInfoValue {
 	public String getMenuId();
 	public String getDisporder();
 	public String getPmenuid();

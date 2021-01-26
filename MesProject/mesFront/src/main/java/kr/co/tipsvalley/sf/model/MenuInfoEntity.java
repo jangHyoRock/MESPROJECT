@@ -14,7 +14,7 @@ import lombok.Data;
 @Entity
 @Table(name = "user_menu")
 
-public class MenuInfoReal implements Serializable
+public class MenuInfoEntity implements Serializable
 {
 	
     @Id

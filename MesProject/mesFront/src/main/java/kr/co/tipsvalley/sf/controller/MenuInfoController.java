@@ -1,7 +1,5 @@
 package kr.co.tipsvalley.sf.controller;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import kr.co.tipsvalley.sf.model.MenuKhaiValueInfoReal;
-import kr.co.tipsvalley.sf.repository.MenuInfoRealEntityRepository;
+import kr.co.tipsvalley.sf.httpEntity.RestResponseEntity;
+import kr.co.tipsvalley.sf.model.json.MenuListJson;
+import kr.co.tipsvalley.sf.service.MenuInfoRealEntityService;
 
 /*
  * Controller that manages user information.
@@ -22,12 +21,16 @@ public class MenuInfoController {
 	static final Logger logger = LoggerFactory.getLogger(MenuInfoController.class);
 	
 	@Autowired
-	private MenuInfoRealEntityRepository menuInfoRealEntityRepository;
+	private MenuInfoRealEntityService menuInfoRealEntityService;
 	
 	@GetMapping("/menu/info")
-	public List<MenuKhaiValueInfoReal> list() {
-		
-		return menuInfoRealEntityRepository.findmenuAll();
-	}
+	 public RestResponseEntity<MenuListJson> findmenuAll()
+    {
+        RestResponseEntity<MenuListJson> result = null;
+        
+        result = new RestResponseEntity<MenuListJson>(this.menuInfoRealEntityService.findMenuInfoValueEntity());
+        
+        return result;
+    }
 
 }

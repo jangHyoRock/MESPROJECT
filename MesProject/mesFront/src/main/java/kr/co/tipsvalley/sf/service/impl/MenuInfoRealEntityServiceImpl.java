@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import kr.co.tipsvalley.sf.model.MenuKhaiValueInfoReal;
+import kr.co.tipsvalley.sf.model.MenuInfoValue;
 import kr.co.tipsvalley.sf.model.json.MenuInfoRealJson;
-import kr.co.tipsvalley.sf.model.json.MenuInfoRealJsonList;
+import kr.co.tipsvalley.sf.model.json.MenuListJson;
 import kr.co.tipsvalley.sf.repository.MenuInfoRealEntityRepository;
 import kr.co.tipsvalley.sf.service.MenuInfoRealEntityService;
 
@@ -21,36 +21,53 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
 	@Autowired
 	MenuInfoRealEntityRepository menuInfoRealEntityRepository;
     
-    public MenuInfoRealJsonList findKhaiValueInfoRealEntity() throws InvalidParameterException{
+    public MenuListJson findMenuInfoValueEntity() throws InvalidParameterException{
     	
-    	MenuInfoRealJsonList menuInfoRealJsonList = new MenuInfoRealJsonList();
+    	MenuListJson menuInfoRealJsonList = new MenuListJson();
         
         // Retune value
-    	ArrayList<MenuInfoRealJson> menuInfoRealJsonListObj = new ArrayList<MenuInfoRealJson>();
+    	ArrayList<MenuInfoRealJson> mainMenuInfoJsonListObj = new ArrayList<MenuInfoRealJson>();
+    	ArrayList<MenuInfoRealJson> subMenuInfoJsonListObj = new ArrayList<MenuInfoRealJson>();
 
-        List<MenuKhaiValueInfoReal> menukhaiValueInfoRealByJPA = null;
+        List<MenuInfoValue> menuInfoValueByJPA = null;
+             
+        menuInfoValueByJPA = this.menuInfoRealEntityRepository.findmenuAll();
         
         
-        menukhaiValueInfoRealByJPA = this.menuInfoRealEntityRepository.findmenuAll();
-
         // JPA return value
-        for(MenuKhaiValueInfoReal menukhaiValueInfoRealEntity : menukhaiValueInfoRealByJPA)
+         for(MenuInfoValue menuInfoValueEntity : menuInfoValueByJPA)
         {
-            MenuInfoRealJson menuInfoRealJsonObj = new MenuInfoRealJson();
-           
-            menuInfoRealJsonObj.setMenuId     (menukhaiValueInfoRealEntity.getMenuId());
-            menuInfoRealJsonObj.setDisporder  (menukhaiValueInfoRealEntity.getDisporder());
-            menuInfoRealJsonObj.setPmenuid    (menukhaiValueInfoRealEntity.getPmenuid());
-            menuInfoRealJsonObj.setMenuname   (menukhaiValueInfoRealEntity.getMenuname());
-            menuInfoRealJsonObj.setIcon       (menukhaiValueInfoRealEntity.getIcon());
-            menuInfoRealJsonObj.setMenudesc   (menukhaiValueInfoRealEntity.getMenudesc());
+            
+        	 MenuInfoRealJson mainMenuInfoJsonObj = new MenuInfoRealJson();
+             MenuInfoRealJson subMenuInfoJsonObj = new MenuInfoRealJson();
 
-            menuInfoRealJsonListObj.add(menuInfoRealJsonObj);
+             if(menuInfoValueEntity.getPmenuid().equals("Main")) {
+   
+          	   
+            	 mainMenuInfoJsonObj.setMenuId     (menuInfoValueEntity.getMenuId());
+            	 mainMenuInfoJsonObj.setDisporder  (menuInfoValueEntity.getDisporder());
+            	 mainMenuInfoJsonObj.setPmenuid    (menuInfoValueEntity.getPmenuid());
+            	 mainMenuInfoJsonObj.setMenuname   (menuInfoValueEntity.getMenuname());
+            	 mainMenuInfoJsonObj.setIcon       (menuInfoValueEntity.getIcon());
+            	 mainMenuInfoJsonObj.setMenudesc   (menuInfoValueEntity.getMenudesc());
+          	   
+          	   
+                mainMenuInfoJsonListObj.add(mainMenuInfoJsonObj);
+          	   	menuInfoRealJsonList.setMenuInfoRealJsonList(mainMenuInfoJsonListObj);
+          	  
+             }else {
+            	 subMenuInfoJsonObj.setMenuId     (menuInfoValueEntity.getMenuId());
+            	 subMenuInfoJsonObj.setDisporder  (menuInfoValueEntity.getDisporder());
+            	 subMenuInfoJsonObj.setPmenuid    (menuInfoValueEntity.getPmenuid());
+            	 subMenuInfoJsonObj.setMenuname   (menuInfoValueEntity.getMenuname());
+            	 subMenuInfoJsonObj.setIcon       (menuInfoValueEntity.getIcon());
+            	 subMenuInfoJsonObj.setMenudesc   (menuInfoValueEntity.getMenudesc());
+          	  
+                 subMenuInfoJsonListObj.add(subMenuInfoJsonObj);
+                 menuInfoRealJsonList.setMenuInfoRealJsonList1(subMenuInfoJsonListObj);
+          	 
+             }
         }
-        
-
-        menuInfoRealJsonList.setMenuInfoRealJsonList(menuInfoRealJsonListObj);
-        
         return menuInfoRealJsonList;
     }
 }

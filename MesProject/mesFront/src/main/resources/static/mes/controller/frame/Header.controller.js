@@ -13,13 +13,29 @@ sap.ui.define([
 			
 			this.getRouter().attachRoutePatternMatched(this._onObjectMatched, this);
 		},
-		
+		/*
 		_onObjectMatched: function (e) {
 			e.getParameter("view").getController().onActive();
 		},
+		*/
 		
 		onSetIconTabHeader: function () {
 			var oMenuList = window.index.menuList;
+			var oMenuInfo = oMenuList.MenuList;
+			var mainIndex = oMenuInfo.length;
+			
+			for(var i=0; i<mainIndex;i++){
+			
+				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo[i].menuId);
+				
+				var oNavigationListItem = new sap.tnt.NavigationListItem({
+					text: oMenuInfo[i].menuname,
+					key: _menuId,
+					expanded: false,
+					icon: oMenuInfo[i].icon || 'sap-icon://product'
+				});
+			}
+			
 			/*
 			oMenuList.forEach(function(oMenuInfo) {
 				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);

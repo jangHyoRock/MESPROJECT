@@ -6,11 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import kr.co.tipsvalley.sf.model.MenuInfoReal;
-import kr.co.tipsvalley.sf.model.MenuKhaiValueInfoReal;
+import kr.co.tipsvalley.sf.model.MenuInfoEntity;
+import kr.co.tipsvalley.sf.model.MenuInfoValue;
 
 @Repository
-public interface MenuInfoRealEntityRepository extends JpaRepository<MenuInfoReal, Long>
+public interface MenuInfoRealEntityRepository extends JpaRepository<MenuInfoEntity, Long>
 {
 	@Query(value="select menu_id  as menuid " +
 	     	//"     ,	to_char(disp_order,'9999999') as  disporder   " + 
@@ -23,5 +23,5 @@ public interface MenuInfoRealEntityRepository extends JpaRepository<MenuInfoReal
 	     	"   FROM user_menu    " + 
 	     	"	where use_yn ='Y' order by disp_order asc ;			",
 	nativeQuery=true)
-	List<MenuKhaiValueInfoReal> findmenuAll();
+	List<MenuInfoValue> findmenuAll();
 }

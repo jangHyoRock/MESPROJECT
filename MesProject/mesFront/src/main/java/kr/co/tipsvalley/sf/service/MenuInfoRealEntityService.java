@@ -2,8 +2,8 @@ package kr.co.tipsvalley.sf.service;
 
 import java.security.InvalidParameterException;
 
-import kr.co.tipsvalley.sf.model.json.MenuInfoRealJsonList;
+import kr.co.tipsvalley.sf.model.json.MenuListJson;
 
 public interface MenuInfoRealEntityService {
-	public MenuInfoRealJsonList findKhaiValueInfoRealEntity() throws InvalidParameterException;
+	public MenuListJson findMenuInfoValueEntity() throws InvalidParameterException;
 }

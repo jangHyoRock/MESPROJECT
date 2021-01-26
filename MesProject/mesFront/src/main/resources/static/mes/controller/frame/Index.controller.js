@@ -33,9 +33,34 @@ sap.ui.define([
 			var _self = this;
 			var oRouter = this.getRouter();
 			
+			var oMenuInfo = oResult.MenuList;
+			var mainIndex = oMenuInfo.length;
 			
 			
+			var oSubMenu = oResult.SubMenuList;
+			var subIndex = oSubMenu.length;
 			
+			for(var i=0; i<mainIndex;i++){
+			
+				var _rootView = _self.getOwnerComponent().getAggregation("rootControl").getId()+i;
+				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo[i].menuId);
+				
+				oRouter.getTargets().addTarget(_menuId, {viewName: oMenuInfo.menu_id, viewLevel: index+i, viewId: _menuId, rootView: _rootView});
+				oRouter.addRoute({name: _menuId, pattern: _menuId, target: _menuId});
+				if(oResult.SubMenuList) {
+				
+					for(var z=0; z<subIndex;z++){
+					
+						var _subMenuId = _menuId + "." + oSubMenu[z].menuId;
+						oRouter.getTargets().addTarget( _menuId + "/" +oSubMenu[z].menuId, {viewName: _subMenuId, viewLevel: index+z, viewId: oSubMenu[z].menuId, rootView: _rootView});
+						oRouter.addRoute({name: _subMenuId, pattern: _menuId + "/" + oSubMenu[z].menuId, target: _menuId + "/" + oSubMenu[z].menuId});					
+					}
+				
+				}
+			}
+			
+			
+			/*	
 			oResult.forEach(function(oMenuInfo, index) {
 				var _rootView = _self.getOwnerComponent().getAggregation("rootControl").getId();
 				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
@@ -51,7 +76,7 @@ sap.ui.define([
 					});
 				}
 			});
-			
+			*/
 			
 			oRouter.initialize();
 			
