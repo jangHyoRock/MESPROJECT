@@ -20,34 +20,29 @@ sap.ui.define([
 			var oMenuList = window.index.menuList;
 			var oNavigationList = new sap.tnt.NavigationList();
 			
-			for(var i=0;i<oMenuList.length;i++){
-			
-				if(oMenuList[i].pmenuid =="Main"){
+			oMenuList.forEach(function(oMenuInfo) {
+				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
+				var oNavigationListItem = new sap.tnt.NavigationListItem({
+					text: oMenuInfo.menu_name,
+					key: _menuId,
+					expanded: false,
+					icon: oMenuInfo.icon || 'sap-icon://product'
+				});
 				
-					var _menuId = Formatter.formatFirstLowerCase(oMenuList[i].menuId);
-					 
-					var oNavigationListItem = new sap.tnt.NavigationListItem({
-						text: oMenuList[i].menuname,
-						key: _menuId,
-						expanded: false,
-						icon: oMenuList[i].icon || 'sap-icon://product'
-					});
-				
-				}else if(oMenuList[i].pmenuid !="Main"){
-	
-					oNavigationListItem.addItem(new sap.tnt.NavigationListItem({
-							text: oMenuList[i].menuname,
-							key:  _menuId
+				if(oMenuInfo.sub_menu) {
+					oMenuInfo.sub_menu.forEach(function(item) {
+						oNavigationListItem.addItem(new sap.tnt.NavigationListItem({
+							text: item.menu_name,
+							key: item.menu_id
 						}));
+					});
 				}
 				
 				oNavigationList.addItem(oNavigationListItem);
+			});
 			
-			}
 			window.left.navi.setItem(oNavigationList);
-			
 		},
-		
 		
 		onPressMenu: function(e) {
 			var b = e.getSource().getPressed();
