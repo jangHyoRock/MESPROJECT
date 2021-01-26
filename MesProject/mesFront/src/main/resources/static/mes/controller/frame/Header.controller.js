@@ -13,44 +13,25 @@ sap.ui.define([
 			
 			this.getRouter().attachRoutePatternMatched(this._onObjectMatched, this);
 		},
-		/*
+		
 		_onObjectMatched: function (e) {
 			e.getParameter("view").getController().onActive();
 		},
-		*/
 		
 		onSetIconTabHeader: function () {
 			var oMenuList = window.index.menuList;
-			
-			for(var i=0;i<oMenuList.length;i++){
-			
-				if(oMenuList[i].pmenuid =="Main"){
-				
-					var _menuId = Formatter.formatFirstLowerCase(oMenuList[i].menuId);
-					 
-					var oIconTabFilter = new sap.m.IconTabFilter({
-						id: _menuId,
-						text: oMenuList[i].menuname,
-						key: _menuId
-					});
-				
-				}
-			
-				window.header.tab.addItem(oIconTabFilter);
-			}
-			
 			/*
 			oMenuList.forEach(function(oMenuInfo) {
-				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menuId);
+				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
 				var oIconTabFilter = new sap.m.IconTabFilter({
 					id: _menuId,
-					text: oMenuInfo.menuname,
+					text: oMenuInfo.menu_name,
 					key: _menuId
 				});
 				
 				window.header.tab.addItem(oIconTabFilter);
 			});
-			*/			
+			*/
 		},
 		
 		onPressLogo: function (e) {
