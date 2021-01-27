@@ -39,7 +39,20 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
         {
             
         	 MenuInfoRealJson mainMenuInfoJsonObj = new MenuInfoRealJson();
-             MenuInfoRealJson subMenuInfoJsonObj = new MenuInfoRealJson();
+        	 
+        	 mainMenuInfoJsonObj.setMenuId     (menuInfoValueEntity.getMenuId());
+        	 mainMenuInfoJsonObj.setDisporder  (menuInfoValueEntity.getDisporder());
+        	 mainMenuInfoJsonObj.setPmenuid    (menuInfoValueEntity.getPmenuid());
+        	 mainMenuInfoJsonObj.setMenuname   (menuInfoValueEntity.getMenuname());
+        	 mainMenuInfoJsonObj.setIcon       (menuInfoValueEntity.getIcon());
+        	 mainMenuInfoJsonObj.setMenudesc   (menuInfoValueEntity.getMenudesc());
+      	   
+      	   
+        	 mainMenuInfoJsonListObj.add(mainMenuInfoJsonObj);
+        	 menuInfoRealJsonList.setMenuInfoRealJsonList(mainMenuInfoJsonListObj);
+        	 
+             /*
+        	 MenuInfoRealJson subMenuInfoJsonObj = new MenuInfoRealJson();
 
              if(menuInfoValueEntity.getPmenuid().equals("Main")) {
    
@@ -54,7 +67,7 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
           	   
                 mainMenuInfoJsonListObj.add(mainMenuInfoJsonObj);
           	   	menuInfoRealJsonList.setMenuInfoRealJsonList(mainMenuInfoJsonListObj);
-          	  
+          	 
              }else {
             	 subMenuInfoJsonObj.setMenuId     (menuInfoValueEntity.getMenuId());
             	 subMenuInfoJsonObj.setDisporder  (menuInfoValueEntity.getDisporder());
@@ -67,7 +80,9 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
                  menuInfoRealJsonList.setMenuInfoRealJsonList1(subMenuInfoJsonListObj);
           	 
              }
+             */
         }
+        
         return menuInfoRealJsonList;
     }
 }
