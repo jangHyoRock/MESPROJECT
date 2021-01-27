@@ -27,7 +27,6 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
         
         // Retune value
     	ArrayList<MenuInfoRealJson> mainMenuInfoJsonListObj = new ArrayList<MenuInfoRealJson>();
-    	ArrayList<MenuInfoRealJson> subMenuInfoJsonListObj = new ArrayList<MenuInfoRealJson>();
 
         List<MenuInfoValue> menuInfoValueByJPA = null;
              

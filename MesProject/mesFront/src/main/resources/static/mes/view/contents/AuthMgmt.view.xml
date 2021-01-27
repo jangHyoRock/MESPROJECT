@@ -3,7 +3,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:t="sap.ui.table" 
 	xmlns:l="sap.ui.layout"
-	controllerName="tips.mes.controller.contents.Contents3">
+	controllerName="tips.mes.controller.contents.AuthMgmt">
 
 	<l:HorizontalLayout class="sapViewInner">
 		<l:content>
@@ -11,7 +11,7 @@
 				<!-- Title & Description Area -->
 				<l:HorizontalLayout class="titleArea">
 					<!-- <Text text="{i18n>contents3Title}" class="headCopy" /> -->
-					<Text text="기본설정" class="headCopy" />
+					<Text text="권한 관리" class="headCopy" />
 					<Text text="{i18n>contents3Description}" class="DescCopy" />
 				</l:HorizontalLayout>
 

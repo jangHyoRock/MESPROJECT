@@ -9,7 +9,7 @@ sap.ui.define([
     return BaseController.extend("tips.mes.controller.contents.History1",
     {
         onInit: function() {
-        	window.contents3 = this;
+        	window.history1 = this;
         },
         
         onActive: function() {

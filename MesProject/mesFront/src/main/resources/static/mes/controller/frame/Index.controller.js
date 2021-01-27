@@ -12,18 +12,26 @@ sap.ui.define([
 			window.index = this;
 			
 			console.info("tips.mes Index.js OnInit()");
-					
+								
 			
 			var oParam = {
 				url: "/user/menu/info",
 				callback: "callbackAjaxMenuInfo"
 			};
 			this.callAjax(oParam);
-			
+
 			this.getRouter().attachBypassed(function(oEvent) {
 				var sHash = oEvent.getParameter("hash");
 				jQuery.sap.log.error("Sorry, but the hash '" + sHash + "' is invalid.", "The resource was not found.");
 			});
+				
+			var locale = sap.ui.getCore().getConfiguration().getLanguage();
+			var oParam = {
+				url: "/user/locale",
+				data: {locale :locale}, 
+				callback: "callbackAjaxMenuTitleValue"
+			};
+			this.callAjax(oParam);
 		},
 		
 		// 메뉴 목록 콜백
@@ -38,10 +46,9 @@ sap.ui.define([
 			var oRouter = this.getRouter();
 			
 			var _menuId ="";
-			var _rootView = "";;
 			
 			oMainMenuResult.forEach(function(oMenuInfo, index) {
-				_rootView = _self.getOwnerComponent().getAggregation("rootControl").getId();
+				var _rootView = _self.getOwnerComponent().getAggregation("rootControl").getId();
 				_menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
 				
 				if(oMenuInfo.p_menu_id == "Main"){
@@ -52,30 +59,11 @@ sap.ui.define([
 				}else{
 					var _subMenuId = _menuId + "." + oMenuInfo.menu_id;
 					oRouter.getTargets().addTarget(_subMenuId, {viewName: _menuId, viewLevel: index+1, viewId: _subMenuId, rootView: _rootView});
-					oRouter.addRoute({name: oMenuInfo.menu_id, pattern: _subMenuId, target: _subMenuId});
+					oRouter.addRoute({name: oMenuInfo.menu_id, pattern: _menuId, target: _subMenuId});
 				}
 			
 			});
-			
-			
-			/*	
-			oResult.forEach(function(oMenuInfo, index) {
-				var _rootView = _self.getOwnerComponent().getAggregation("rootControl").getId();
-				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
-				
-				oRouter.getTargets().addTarget(_menuId, {viewName: oMenuInfo.menu_id, viewLevel: index+1, viewId: _menuId, rootView: _rootView});
-				oRouter.addRoute({name: _menuId, pattern: _menuId, target: _menuId});
-				
-				if(oMenuInfo.sub_menu) {
-					oMenuInfo.sub_menu.forEach(function(item) {
-						var _subMenuId = _menuId + "." + item.menu_id;
-						oRouter.getTargets().addTarget(item.menu_id, {viewName: _subMenuId, viewLevel: index+1, viewId: item.menu_id, rootView: _rootView});
-						oRouter.addRoute({name: _subMenuId, pattern: _menuId + "/" + item.menu_id, target: item.menu_id});
-					});
-				}
-			});
-			*/
-			
+						
 			oRouter.initialize();
 			
 			window.index.menuList = oResult;
@@ -85,6 +73,13 @@ sap.ui.define([
 			this.onSetCurrent();
 			
 		},
+		
+		callbackAjaxMenuTitleValue : function(oModel){
+		
+			console.log("callbackAjaxMenuTitleValue");
+			
+		},
+		
 		
 		onSetCurrent : function () {
 			var oRouter = this.getRouter();

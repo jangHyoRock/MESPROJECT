@@ -8,23 +8,12 @@ sap.ui.define([
         
     return BaseController.extend("tips.mes.controller.contents.AuthMgmt",
     {
-        onInit: function() {
-        	window.contents3 = this;
+          onInit: function() {
+        	console.log("tips.mes.controller.contents.Main onInit()");
         },
         
         onActive: function() {
-        	console.log("tips.mes.controller.contents.Contents3 onActive()");
-        },
-        
-        errorback: function(){ },
-        
-        callbackFunction : function(oModel) {
-            var oData = oModel.getProperty("/result/list");
-            this.byId("idTable").setModel(new JSONModel(oData));
-        },
-              
-        errorCallbackFunction : function() {
-            console.log("error callback");
+        	console.log("tips.mes.controller.contents.Main onActive()");
         }
         
     });
