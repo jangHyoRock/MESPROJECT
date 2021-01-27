@@ -20,38 +20,34 @@ sap.ui.define([
 			var oMenuList = window.index.menuList;
 			var oNavigationList = new sap.tnt.NavigationList();
 					
-			var oMenuInfo = oMenuList.MenuList;
-			var mainIndex = oMenuInfo.length;
+			var oMenuList = oMenuList.MenuList;
 			
-			var oSubMenu = oMenuList.SubMenuList;
-			var subIndex = oSubMenu.length;
+			var oNavigationListItem = "";
 			
-			var aaa = "";
-			
-			for(var i=0; i<mainIndex;i++){
+			oMenuList.forEach(function(oMenuInfo) {
+				
+				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
+				
+				if(oMenuInfo.p_menu_id == "Main"){
 					
-						aaa = oMenuInfo[i].menuId;
-					var _menuId = Formatter.formatFirstLowerCase(oMenuInfo[i].menuId);
-					
-					var oNavigationListItem = new sap.tnt.NavigationListItem({
-						text: oMenuInfo[i].menuname,
+						oNavigationListItem = new sap.tnt.NavigationListItem({
+						text: oMenuInfo.menu_name,
 						key: _menuId,
 						expanded: false,
-						icon: oMenuInfo[i].icon || 'sap-icon://product'
+						icon: oMenuInfo.icon || 'sap-icon://product'
 					});
-			if(oSubMenu[i].pmenuid == aaa  ){
 				
-					for(var z=0; z<subIndex;z++){
-				
+				}else{
+					//oMenuList.forEach(function(item) {
 						oNavigationListItem.addItem(new sap.tnt.NavigationListItem({
-								text: oSubMenu[z].menuname,
-								key: oSubMenu[z].menuid
-							}));
-					}
-				
+							text: oMenuInfo.menu_name,
+							key: oMenuInfo.menu_id
+						}));
+					//});
 				}
 				oNavigationList.addItem(oNavigationListItem);
-			}
+			
+			});
 			
 			
 			/*

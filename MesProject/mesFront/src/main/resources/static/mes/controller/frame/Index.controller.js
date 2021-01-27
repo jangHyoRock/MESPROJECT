@@ -29,35 +29,34 @@ sap.ui.define([
 		// 메뉴 목록 콜백
 		callbackAjaxMenuInfo : function (oModel) {
 		console.log("callbackAjaxMenuInfo");
-			var oResult = oModel.getData().result;
+			var oResult =  oModel.getData().result;
+			
+			var oMainMenuResult = oModel.getData().result.MenuList;
+			//var oSubMenuResult = oModel.getData().result.SubMenuList;
+			
 			var _self = this;
 			var oRouter = this.getRouter();
 			
-			var oMenuInfo = oResult.MenuList;
-			var mainIndex = oMenuInfo.length;
+			var _menuId ="";
+			var _rootView = "";;
 			
-			
-			var oSubMenu = oResult.SubMenuList;
-			var subIndex = oSubMenu.length;
-			
-			for(var i=0; i<mainIndex;i++){
-			
-				var _rootView = _self.getOwnerComponent().getAggregation("rootControl").getId()+i;
-				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo[i].menuId);
+			oMainMenuResult.forEach(function(oMenuInfo, index) {
+				_rootView = _self.getOwnerComponent().getAggregation("rootControl").getId();
+				_menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
 				
-				oRouter.getTargets().addTarget(_menuId, {viewName: oMenuInfo.menu_id, viewLevel: index+i, viewId: _menuId, rootView: _rootView});
-				oRouter.addRoute({name: _menuId, pattern: _menuId, target: _menuId});
-				if(oResult.SubMenuList) {
 				
-					for(var z=0; z<subIndex;z++){
+				if(oMenuInfo.p_menu_id == "Main"){
 					
-						var _subMenuId = _menuId + "." + oSubMenu[z].menuId;
-						oRouter.getTargets().addTarget( _menuId + "/" +oSubMenu[z].menuId, {viewName: _subMenuId, viewLevel: index+z, viewId: oSubMenu[z].menuId, rootView: _rootView});
-						oRouter.addRoute({name: _subMenuId, pattern: _menuId + "/" + oSubMenu[z].menuId, target: _menuId + "/" + oSubMenu[z].menuId});					
-					}
+					oRouter.getTargets().addTarget(_menuId, {viewName: oMenuInfo.menu_id, viewLevel: index+1, viewId: _menuId, rootView: _rootView});
+					oRouter.addRoute({name: _menuId, pattern: _menuId, target: _menuId});
 				
+				}else{
+					var _subMenuId = _menuId + "." + oMenuInfo.menu_id;
+					oRouter.getTargets().addTarget(oMenuInfo.menu_id, {viewName: _subMenuId, viewLevel: index+1, viewId: oMenuInfo.menu_id, rootView: _rootView});
+					oRouter.addRoute({name: _subMenuId, pattern: _menuId + "/" + oMenuInfo.menu_id, target: oMenuInfo.menu_id});
 				}
-			}
+			
+			});
 			
 			
 			/*	
