@@ -17,61 +17,39 @@ sap.ui.define([
 			var oNavigationList = new sap.tnt.NavigationList();
 						
 			var oNavigationListItem = "";
+			var _menuId;
+			var _menu_name;
+			//this.navi.setExpanded(false);
 			
 			oMenuList.forEach(function(oMenuInfo) {
 				
 				//var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
-				var _menuId = oMenuInfo.menu_id;
+				_menuId = oMenuInfo.menu_id;
+				_menu_name = oMenuInfo.menu_name;
 				
 				if(oMenuInfo.p_menu_id == "Main"){
 					
 						oNavigationListItem = new sap.tnt.NavigationListItem({
-						text: oMenuInfo.menu_name,
+						text: _menu_name,
 						key: _menuId,
 						expanded: false,
 						icon: oMenuInfo.icon || 'sap-icon://product'
 					});
-				
 				}else{
-					//oMenuList.forEach(function(item) {
 						oNavigationListItem.addItem(new sap.tnt.NavigationListItem({
-							text: oMenuInfo.menu_name,
-							key: oMenuInfo.menu_id
+							text: _menu_name,
+							key: _menuId,
 						}));
-					//});
 				}
 				oNavigationList.addItem(oNavigationListItem);
 			
 			});
 				window.left.navi.setItem(oNavigationList);
-			
-			/*
-			oMenuList.forEach(function(oMenuInfo) {
-				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
-				var oNavigationListItem = new sap.tnt.NavigationListItem({
-					text: oMenuInfo.menu_name,
-					key: _menuId + "." + oMenuInfo.menu_id,
-					expanded: false,
-					icon: oMenuInfo.icon || 'sap-icon://product'
-				});
-				
-				if(oMenuInfo.sub_menu) {
-					oMenuInfo.sub_menu.forEach(function(item) {
-						oNavigationListItem.addItem(new sap.tnt.NavigationListItem({
-							text: item.menu_name,
-							key: _menuId + "." + item.menu_id
-						}));
-					});
-				}
-				
-				oNavigationList.addItem(oNavigationListItem);
-			});
-			
-			
-			window.left.navi.setItem(oNavigationList);
-			*/
 		},
-		
+			onCollapseExpandPress : function(e){
+		console.log("onCollapseExpandPress");
+		}
+		,
 		onPressMenu: function(e) {
 			var b = e.getSource().getPressed();
 			var w = "200px";
@@ -88,10 +66,8 @@ sap.ui.define([
 		
 		// SideNavigation 선택
 		onSelect: function(e) {
-			var key = e.getSource().getSelectedKey();
+			var key = e.getSource().getSelectedKey();			
 			this.getRouter().navTo(key);
-			
-			//var pMenuId = key.substring(0, key.indexOf("."));
 			window.header.tab.setSelectedKey(key);
 		}
 		
