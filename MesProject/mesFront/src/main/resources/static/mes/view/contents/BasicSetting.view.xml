@@ -10,17 +10,27 @@
 			<VBox>
 				<!-- Title & Description Area -->
 				<l:HorizontalLayout class="titleArea">
-					<!-- <Text text="{i18n>mainTitle}" class="headCopy" /> -->
-					<Text text="기본설정" class="headCopy" />
-					<Text text="{i18n>mainDescription}" class="DescCopy" />
+					<Text text="{i18n>contents1Title}" class="headCopy" />
+					<Text text="{i18n>contents1Description}" class="DescCopy" />
 				</l:HorizontalLayout>
 
 				<!-- Overview Content & Table Area -->
-				<l:HorizontalLayout class="contentArea">
+				<l:HorizontalLayout class="contentArea1">
+					<!-- Card List & Chart -->
+					<VBox>
+						<!-- Card -->
+						<Text text="Warning List" class="subTitle" />
+						<!-- Card First -->
+						<l:HorizontalLayout class="cardItemUI">
+							<Text text="Revenue" />
+							<Text id="pm10_value" class="cardItemValue" />
+						</l:HorizontalLayout>
+
+					</VBox>
 					<!-- Table Area -->
 					<VBox>
-						<Text text="Main Information" class="subTitle" />
-						<t:Table id="idTable" selectionMode="None" rows="{product>/milk}" visibleRowCount="6">
+						<Text text="Detail Information" class="subTitle" />
+						<t:Table id="idTable" selectionMode="None" rows="{product>/milk}" visibleRowCount="12" width="100%">
 							<t:columns>
 								<t:Column resizable="true" hAlign="Center">
 									<Label text="Seasons" />
@@ -34,66 +44,22 @@
 										<Text text="{product>Revenue}"/>
 									</t:template>
 								</t:Column>
-							</t:columns>
-						</t:Table>
-					</VBox>
-					<VBox>
-						<Text text="Main Information2" class="subTitle" />
-						<t:Table id="idTable2" selectionMode="None" rows="{product>/milk}" visibleRowCount="6">
-							<t:columns>
 								<t:Column resizable="true" hAlign="Center">
-									<Label text="Seasons" />
+									<Label text="Cost" />
 									<t:template>
-										<Text text="{product>Seasons}"/>
+										<Text text="{product>Cost}"/>
 									</t:template>
 								</t:Column>
 								<t:Column resizable="true" hAlign="Center">
-									<Label text="Revenue" />
+									<Label text="Target" />
 									<t:template>
-										<Text text="{product>Revenue}"/>
-									</t:template>
-								</t:Column>
-							</t:columns>
-						</t:Table>
-					</VBox>
-				</l:HorizontalLayout>
-				
-				<!-- Overview Content & Table Area -->
-				<l:HorizontalLayout class="contentArea">
-					<!-- Table Area -->
-					<VBox>
-						<Text text="Main Information3" class="subTitle" />
-						<t:Table id="idTable3" selectionMode="None" rows="{product>/milk}" visibleRowCount="6">
-							<t:columns>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Seasons" />
-									<t:template>
-										<Text text="{product>Seasons}"/>
+										<Text text="{product>Target}"/>
 									</t:template>
 								</t:Column>
 								<t:Column resizable="true" hAlign="Center">
-									<Label text="Revenue" />
+									<Label text="Budget" />
 									<t:template>
-										<Text text="{product>Revenue}"/>
-									</t:template>
-								</t:Column>
-							</t:columns>
-						</t:Table>
-					</VBox>
-					<VBox>
-						<Text text="Main Information4" class="subTitle" />
-						<t:Table id="idTable4" selectionMode="None" rows="{product>/milk}" visibleRowCount="6">
-							<t:columns>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Seasons" />
-									<t:template>
-										<Text text="{product>Seasons}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Revenue" />
-									<t:template>
-										<Text text="{product>Revenue}"/>
+										<Text text="{product>Budget}"/>
 									</t:template>
 								</t:Column>
 							</t:columns>

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.tipsvalley.sf.model.MenuTitleValue;
-import kr.co.tipsvalley.sf.model.MenuTitleValueEntity;
 import kr.co.tipsvalley.sf.model.json.MenuTitleValueJson;
 import kr.co.tipsvalley.sf.model.json.MenuTitleValueJsonList;
 import kr.co.tipsvalley.sf.repository.MenuInfoRealEntityRepository;
@@ -31,7 +30,7 @@ public class MenuTitleValueEntityServiceImpl implements MenuTitleValueEntityServ
 
         List<MenuTitleValue> MenuTitleValueByJPA = null;
              
-        MenuTitleValueByJPA = this.menuInfoRealEntityRepository.findMenuDesc(locale);
+       // MenuTitleValueByJPA = this.menuInfoRealEntityRepository.findMenuDesc(locale);
         
         
         // JPA return value

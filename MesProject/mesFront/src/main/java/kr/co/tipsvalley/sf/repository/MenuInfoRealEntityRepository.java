@@ -27,18 +27,13 @@ public interface MenuInfoRealEntityRepository extends JpaRepository<MenuInfoEnti
 	nativeQuery=true)
 	List<MenuInfoValue> findmenuAll();
 	
-	@Query(value="SELECT "
-			+ "a.menu_id"
-			+ ", a.p_menu_id as pmenuid"
-			+ ", a.icon as icon"
-			+ ", b.menu_desc as menu_desc"
-			+ ", b.locale as locale"
-			+ ", b.menu_name as menu_name " + 
-			"	FROM user_menu A " + 
-			"	INNER JOIN contents_title B " + 
-			"	ON a.menu_id = b.menu_id " + 
-			"	WHERE use_yn = 'Y' AND b.locale = :locale " + 
-			"	ORDER BY disp_order "
-	, nativeQuery=true)
-	List<MenuTitleValue> findMenuDesc(@Param("locale") String locale);
+	/*
+	 * @Query(value="SELECT " + "a.menu_id" + ", a.p_menu_id as pmenuid" +
+	 * ", a.icon as icon" + ", b.menu_desc as menu_desc" + ", b.locale as locale" +
+	 * ", b.menu_name as menu_name " + "	FROM user_menu A " +
+	 * "	INNER JOIN contents_title B " + "	ON a.menu_id = b.menu_id " +
+	 * "	WHERE use_yn = 'Y' AND b.locale = :locale " + "	ORDER BY disp_order " ,
+	 * nativeQuery=true) List<MenuTitleValue> findMenuDesc(@Param("locale") String
+	 * locale);
+	 */
 }

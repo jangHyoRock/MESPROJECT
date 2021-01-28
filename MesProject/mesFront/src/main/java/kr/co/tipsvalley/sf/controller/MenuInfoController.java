@@ -40,15 +40,18 @@ public class MenuInfoController {
         return result;
     }
 	
-	@GetMapping("/locale")
-	@ResponseBody
-	 public RestResponseEntity<MenuTitleValueJsonList> findMenuDesc(@RequestParam String locale)
-   {
-       RestResponseEntity<MenuTitleValueJsonList> MenuTitle = null;
-       
-       MenuTitle = new RestResponseEntity<MenuTitleValueJsonList>(this.menuTitleValueEntityService.menuTitleValueEntity(locale));
-       
-       return MenuTitle;
-   }
+	/*
+	 * @GetMapping("/locale")
+	 * 
+	 * @ResponseBody public RestResponseEntity<MenuTitleValueJsonList>
+	 * findMenuDesc(@RequestParam String locale) {
+	 * RestResponseEntity<MenuTitleValueJsonList> MenuTitle = null;
+	 * 
+	 * MenuTitle = new
+	 * RestResponseEntity<MenuTitleValueJsonList>(this.menuTitleValueEntityService.
+	 * menuTitleValueEntity(locale));
+	 * 
+	 * return MenuTitle; }
+	 */
 
 }

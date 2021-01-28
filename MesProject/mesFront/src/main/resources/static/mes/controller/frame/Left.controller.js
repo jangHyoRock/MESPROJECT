@@ -7,21 +7,15 @@ sap.ui.define([
 	return BaseController.extend("tips.mes.controller.frame.Left", {
 		onInit : function() {
 			console.info("tips.mes Left.js OnInit()");
-			window.left = this;			
-		
+			window.left = this;
+			
 			this.navi = this.byId("sideNavigation");
-		},
-		callbackAjaxLeftMenuInfo : function(){
-		
-			console.log("finish");
 		},
 		
 		onSetSideNavigation: function () {
 			var oMenuList = window.index.menuList;
 			var oNavigationList = new sap.tnt.NavigationList();
-					
-			var oMenuList = oMenuList.MenuList;
-			
+						
 			var oNavigationListItem = "";
 			
 			oMenuList.forEach(function(oMenuInfo) {
@@ -48,14 +42,14 @@ sap.ui.define([
 				oNavigationList.addItem(oNavigationListItem);
 			
 			});
-			
+				window.left.navi.setItem(oNavigationList);
 			
 			/*
 			oMenuList.forEach(function(oMenuInfo) {
 				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
 				var oNavigationListItem = new sap.tnt.NavigationListItem({
 					text: oMenuInfo.menu_name,
-					key: _menuId,
+					key: _menuId + "." + oMenuInfo.menu_id,
 					expanded: false,
 					icon: oMenuInfo.icon || 'sap-icon://product'
 				});
@@ -64,16 +58,17 @@ sap.ui.define([
 					oMenuInfo.sub_menu.forEach(function(item) {
 						oNavigationListItem.addItem(new sap.tnt.NavigationListItem({
 							text: item.menu_name,
-							key: item.menu_id
+							key: _menuId + "." + item.menu_id
 						}));
 					});
 				}
 				
 				oNavigationList.addItem(oNavigationListItem);
 			});
-			*/
+			
 			
 			window.left.navi.setItem(oNavigationList);
+			*/
 		},
 		
 		onPressMenu: function(e) {
@@ -94,7 +89,9 @@ sap.ui.define([
 		onSelect: function(e) {
 			var key = e.getSource().getSelectedKey();
 			this.getRouter().navTo(key);
-			window.header.tab.setSelectedKey(key);
+			
+			var pMenuId = key.substring(0, key.indexOf("."));
+			window.header.tab.setSelectedKey(pMenuId+"."+pMenuId);
 		}
 		
 	});

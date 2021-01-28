@@ -4,7 +4,7 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	controllerName="tips.mes.controller.frame.Header">
 	<tnt:ToolHeader>
-		<Image width="175px" class="pointer" src="/common/images/whiteLogo.png" activeSrc="/common/images/zebraLogo.png" press="onPressLogo"/>
+		<Image width="200px" class="pointer" src="/common/images/logo.jpg"  press="onPressLogo"/>
 		<IconTabHeader id="iconTabHeader"
 			selectedKey=" "
 			select="onSelectTab"

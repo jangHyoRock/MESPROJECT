@@ -9,11 +9,11 @@ sap.ui.define([
     return BaseController.extend("tips.mes.controller.contents.UserMgmt",
     {
         onInit: function() {
-        	window.contents3 = this;
+        	window.UserMgmt = this;
         },
         
         onActive: function() {
-        	console.log("tips.mes.controller.contents.Contents3 onActive()");
+        	console.log("tips.mes.controller.contents.UserMgmt onActive()");
         },
         
         errorback: function(){ },

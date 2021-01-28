@@ -1,10 +1,15 @@
-<mvc:View width="200px"
+<mvc:View width="250px"
     xmlns="sap.tnt"
     xmlns:m="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     controllerName="tips.mes.controller.frame.Left">
 
-	<m:ToggleButton class="marginLeft5" icon="sap-icon://menu2" pressed="true" press="onPressMenu" />
-    <SideNavigation id="sideNavigation" itemSelect="onSelect" />
-    
+	<m:ScrollContainer
+	        height="100%"
+			width="100%"
+	    	vertical="true"
+			focusable="true">
+		<m:ToggleButton class="marginLeft5" icon="sap-icon://menu2" pressed="true" press="onPressMenu" />
+	    <SideNavigation id="sideNavigation" itemSelect="onSelect" />
+	</m:ScrollContainer> 
 </mvc:View>

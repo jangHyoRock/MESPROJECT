@@ -13,48 +13,83 @@ sap.ui.define([
 			
 			this.getRouter().attachRoutePatternMatched(this._onObjectMatched, this);
 		},
-		/*
+		
 		_onObjectMatched: function (e) {
 			e.getParameter("view").getController().onActive();
+			this._onSetTitleDesc();
 		},
-		*/
+
+		
+		// View의 Title과 Description 설정
+		_onSetTitleDesc: function () {
+			var oCurrentPage = this.getRouter().getHashChanger().hash;
+			
+			if(oCurrentPage == "") {
+				var _oData = {
+					title : this.getResourceBundle().getText("mainTitle"),
+					desc : this.getResourceBundle().getText("mainDescription")
+				}
+				this.getModel("viewTitleDesc").setData(_oData);
+				
+				return false;				
+			}
+			oCurrentPage = oCurrentPage.replace("/", ".");
+
+			var _title = "";
+			var _desc = "";
+			var _len = window.index.menuList.length;
+			for (var i = 0; i < _len; i++) {
+				var oMenuInfo = window.index.menuList[i];
+				var _menuId = oMenuInfo.menu_id;
+				var _menuIdLC = Formatter.formatFirstLowerCase(_menuId);
+				
+				if(oMenuInfo.sub_menu) {
+					oMenuInfo.sub_menu.forEach(function(item) {
+						if (oCurrentPage == _menuIdLC + "." + item.menu_id) {
+							_title = item.menu_title;
+							_desc = item.menu_desc;
+						}
+					});
+				} else {
+					if (oCurrentPage == _menuIdLC + "." + _menuId) {
+						_title = oMenuInfo.menu_title;
+						_desc = oMenuInfo.menu_desc;
+						break;
+					}
+				}
+			}
+			
+			var _oData = {
+				title : _title,
+				desc : _desc
+			}
+			this.getModel("viewTitleDesc").setData(_oData);
+		},
 		
 		onSetIconTabHeader: function () {
 			var oMenuList = window.index.menuList;
-			var oMenuInfo = oMenuList.MenuList;
-			var mainIndex = oMenuInfo.length;
 			
-			for(var i=0; i<mainIndex;i++){
-			
-				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo[i].menuId);
-				
-				var oNavigationListItem = new sap.tnt.NavigationListItem({
-					text: oMenuInfo[i].menuname,
-					key: _menuId,
-					expanded: false,
-					icon: oMenuInfo[i].icon || 'sap-icon://product'
-				});
-			}
-			
-			/*
 			oMenuList.forEach(function(oMenuInfo) {
-				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
-				var oIconTabFilter = new sap.m.IconTabFilter({
-					id: _menuId,
-					text: oMenuInfo.menu_name,
-					key: _menuId
-				});
-				
-				window.header.tab.addItem(oIconTabFilter);
+				if(oMenuInfo.p_menu_id == "Main"){
+					//var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
+					var _menuId = oMenuInfo.menu_id;
+					var oIconTabFilter = new sap.m.IconTabFilter({
+						id: _menuId,
+						text: oMenuInfo.menu_name,
+						key: _menuId + "." + oMenuInfo.menu_id
+					});
+					
+					window.header.tab.addItem(oIconTabFilter);
+				}
 			});
-			*/
+			
 		},
 		
 		onPressLogo: function (e) {
 			this.getRouter().navTo("main");
 			window.header.tab.setSelectedKey(" ");
 			window.left.navi.destroyItem();
-			window.left.onSetSideNavigation(window.index.menuList);
+			window.left.onSetSideNavigation();
 			window.left.navi.setSelectedKey(" ");
 		},
 		
