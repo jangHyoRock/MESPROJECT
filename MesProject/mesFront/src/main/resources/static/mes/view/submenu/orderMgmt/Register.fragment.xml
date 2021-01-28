@@ -1,0 +1,141 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout" >
+    <Dialog
+        id="register"
+        title="발주관리"
+        contentWidth="80%">
+        <content>
+        <l:HorizontalLayout class="sapViewInner Dialogcolor">
+		<l:content>
+            <VBox>
+			    <!--  <l:HorizontalLayout class="center">
+			        <Title text="발주관리" class="mainfont" />
+			    </l:HorizontalLayout>  -->
+			
+			    <VBox class="centerbox">
+			    <HBox>
+			        <Title text="수주NO" class="sapUiSmallMargin" />
+			         <ActionSelect
+			            autoAdjustWidth="true" 
+			            class="detail3"
+			            id = "actionselect"
+			            items="{
+			                        path : 'combo>/Suju'
+			                    }"
+			            >
+			        <!-- autoAdjustWidth="true" : width 따로 조절하기위해 세팅 -->
+			            <core:Item  text="{combo>text}" key="{combo>key}" />
+			        </ActionSelect>       
+			        <Title text="매입처" class="sapUiSmallMargin" />
+			        <ActionSelect
+			            autoAdjustWidth="true"
+			            class="detail3"
+			            id = "actionselect2"
+			            items="{
+			                        path : 'invoice>/Invoices'
+			                    }"
+			            >
+			            <core:Item  text="{invoice>num3}"  />
+			        </ActionSelect>
+			    </HBox>
+			
+			    <HBox>
+			        <Title text="발주일 " class="sapUiSmallMargin" />
+			        <DatePicker
+						id="DP2"
+						placeholder="발주일" valueFormat="yyyy-MM-dd"
+						change="handleChange"
+						class="sapUiSmallMarginBottom detail3padding"
+			            width="200px"
+			            value="{omodel13>/num4}" />
+			        <Title text="참조" class="sapUiSmallMargin" />
+			        <Input placeholder="참조" class="sapUiSmallMarginEnd test" width="220px" value="{omodel13>/num5}" />
+			    </HBox>
+			
+			    <HBox>
+			        <Title text="금액" class="sapUiSmallMargin" />
+			        <Input enabled="false" value="금액" width="220px" class=" test" />
+			        <Title text="부가세" class="sapUiSmallMarginBegin sapUiSmallMarginEnd sapUiSmallMarginTop" />
+			        <ActionSelect
+			            autoAdjustWidth="true"
+			            class="detail3 detail3padding"
+			            items="{
+			                        path : 'combo>/VAT'
+			                    }"
+			            >
+			            <core:Item  text="{combo>text}"  />
+			        </ActionSelect>
+			    </HBox>
+			
+			    <HBox>
+			        <Title text="입고일" class="sapUiSmallMargin" />
+			        <DatePicker
+						id="DP3"
+						placeholder="납기일" valueFormat="yyyy-MM-dd"
+						change="handleChange"
+						class="sapUiSmallMarginBottom detail3padding"
+			            width="200px"
+			            value="{omodel13>/num7}" />
+			        <Title text="비고" class="sapUiSmallMargin" />
+			        <Input placeholder="비고(50자내로작성)" width="220px" class="sapUiSmallMarginEnd test" value="{omodel13>/num8}" />
+			    </HBox>
+			
+			
+			
+			    <l:HorizontalLayout class="table"> 
+			        <Table
+			            id="invoiceList"
+			            class="sapUiSmallMarginBegin"
+			            width="auto">
+			            <columns>
+			                <Column width="25%"  >
+			                <Text text="품목명" />
+			                </Column>
+			                <Column width="20%">
+			                <Text text="규격" />
+			                </Column>
+			                <Column>
+			                <Text text="수량" />
+			                </Column>
+			                <Column>
+			                <Text text="단가"  />
+			                </Column>
+			                <Column>
+			                <Text text="금액" />
+			                </Column>
+			                <Column>
+			                <Text text="입고요청일" />
+			                </Column>
+			                <Column>
+			                <Text text="비고" />
+			                </Column>
+			            </columns>
+			            <items>
+			                <ColumnListItem>
+			                    <cells>
+			                        <Button  text="클릭후 선택해주세요"  press=".ShowList" />
+			                        <Input enabled="false" value="{invoice>num5}" />
+			                        <Input  value="{invoice>num10}"  />
+			                        <Input  value=""  />
+			                        <Input  value=""  />
+			                        <Input value=""  />
+			                        <Button text="추가" />
+			                    </cells>
+			                </ColumnListItem>
+			            </items>
+			        </Table>
+				    </l:HorizontalLayout>
+			    	<l:HorizontalLayout>
+			        <Button text="등록" class="sapUiSmallMarginEnd bottombutton2" press="Insert"  />
+			        <Button text="목록" press="onCloseDialog" />
+			        </l:HorizontalLayout>
+			    
+			    </VBox>
+    		</VBox>
+        </l:content>
+		</l:HorizontalLayout>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

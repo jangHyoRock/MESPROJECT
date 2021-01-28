@@ -1,0 +1,35 @@
+<mvc:View
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:t="sap.ui.table" 
+	xmlns:l="sap.ui.layout"
+	controllerName="tips.mes.controller.contents.productionMgmt.ProductionMgmt">
+
+	<l:HorizontalLayout class="sapViewInner">
+		<l:content>
+			<VBox>
+ 				<!-- Title & Description Area -->
+ 				<core:Fragment id="exportPrint" fragmentName="tips.mes.view.fragment.TitleDesc" type="XML" />
+
+				<!-- Contents Area -->
+				<IconTabBar
+				id="idIconTabBarNoIcons"
+				expanded="{device>/isNoPhone}"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="등록/조회" key="info">
+		    			<mvc:XMLView id="registerView" viewName="tips.mes.view.contents.productionMgmt.submenu.Register"/>
+					</IconTabFilter>
+					<IconTabFilter text="주간현황" key="attachments">
+		    			<mvc:XMLView id="weeklyView" viewName="tips.mes.view.contents.productionMgmt.submenu.Weekly"/>
+					</IconTabFilter>
+					<IconTabFilter text="월별현황" key="notes">
+		    			<mvc:XMLView id="monthlyView" viewName="tips.mes.view.contents.productionMgmt.submenu.Monthly"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			</VBox>
+		</l:content>
+	</l:HorizontalLayout>
+</mvc:View>

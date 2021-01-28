@@ -1,0 +1,491 @@
+2021:01:28 21:47:00.157 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 30772 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 21:47:00.165 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 21:47:00.294 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2021:01:28 21:47:00.295 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2021:01:28 21:47:01.458 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 21:47:01.553 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces. 
+2021:01:28 21:47:02.399 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 21:47:02.411 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 21:47:02.411 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 21:47:02.649 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 21:47:02.650 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2352 ms 
+2021:01:28 21:47:02.944 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 21:47:03.023 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.27.Final 
+2021:01:28 21:47:03.212 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:01:28 21:47:03.440 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 21:47:04.222 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:01:28 21:47:04.432 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:01:28 21:47:04.675 ERROR --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title] 
+2021:01:28 21:47:04.675 WARN  --- [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title] 
+2021:01:28 21:47:04.677 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:01:28 21:47:04.750 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 
+2021:01:28 21:47:04.753 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Stopping service [Tomcat] 
+2021:01:28 21:47:04.790 INFO  --- [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2021:01:28 21:47:04.814 ERROR --- [restartedMain] o.s.boot.SpringApplication : Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1159)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at kr.co.tipsvalley.sf.MesFrontApplication.main(MesFrontApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 22 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:121)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:42)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:89)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:68)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 26 common frames omitted
+2021:01:28 21:47:58.074 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 16176 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 21:47:58.077 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 21:47:58.134 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2021:01:28 21:47:58.135 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2021:01:28 21:47:58.943 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 21:47:59.037 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces. 
+2021:01:28 21:47:59.736 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 21:47:59.747 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 21:47:59.747 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 21:47:59.941 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 21:47:59.943 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1806 ms 
+2021:01:28 21:48:00.175 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 21:48:00.247 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.27.Final 
+2021:01:28 21:48:00.419 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:01:28 21:48:00.587 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 21:48:01.281 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:01:28 21:48:01.484 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:01:28 21:48:01.561 ERROR --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title] 
+2021:01:28 21:48:01.562 WARN  --- [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title] 
+2021:01:28 21:48:01.563 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:01:28 21:48:01.565 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 
+2021:01:28 21:48:01.567 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Stopping service [Tomcat] 
+2021:01:28 21:48:01.578 INFO  --- [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2021:01:28 21:48:01.602 ERROR --- [restartedMain] o.s.boot.SpringApplication : Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1159)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at kr.co.tipsvalley.sf.MesFrontApplication.main(MesFrontApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 22 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:121)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:42)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:89)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:68)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 26 common frames omitted
+2021:01:28 21:49:15.996 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 18564 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 21:49:15.999 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 21:49:16.056 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2021:01:28 21:49:16.057 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2021:01:28 21:49:16.934 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 21:49:17.026 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces. 
+2021:01:28 21:49:17.753 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 21:49:17.766 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 21:49:17.767 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 21:49:17.990 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 21:49:17.990 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1932 ms 
+2021:01:28 21:49:18.305 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 21:49:18.402 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.27.Final 
+2021:01:28 21:49:18.635 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:01:28 21:49:18.880 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 21:49:19.830 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:01:28 21:49:20.073 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:01:28 21:49:20.170 ERROR --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title_value_entity] 
+2021:01:28 21:49:20.170 WARN  --- [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title_value_entity] 
+2021:01:28 21:49:20.172 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:01:28 21:49:20.174 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 
+2021:01:28 21:49:20.176 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Stopping service [Tomcat] 
+2021:01:28 21:49:20.192 INFO  --- [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2021:01:28 21:49:20.222 ERROR --- [restartedMain] o.s.boot.SpringApplication : Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title_value_entity]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1159)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at kr.co.tipsvalley.sf.MesFrontApplication.main(MesFrontApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title_value_entity]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1847)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784)
+	... 22 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [contents_title_value_entity]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:121)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:42)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:89)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:68)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 26 common frames omitted
+2021:01:28 21:50:29.616 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 25704 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 21:50:29.620 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 21:50:29.676 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2021:01:28 21:50:29.677 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2021:01:28 21:50:30.498 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 21:50:30.592 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 2 JPA repository interfaces. 
+2021:01:28 21:50:31.535 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 21:50:31.554 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 21:50:31.555 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 21:50:31.789 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 21:50:31.789 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2111 ms 
+2021:01:28 21:50:32.095 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 21:50:32.179 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.27.Final 
+2021:01:28 21:50:32.391 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:01:28 21:50:32.586 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 21:50:33.281 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:01:28 21:50:33.464 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:01:28 21:50:33.533 INFO  --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021:01:28 21:50:33.555 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 21:50:33.636 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2021:01:28 21:50:34.196 INFO  --- [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: aa4cf608-3569-49fa-a679-ffdc72056183
+ 
+2021:01:28 21:50:34.341 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@249b2c46, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f4f2a87, org.springframework.security.web.header.HeaderWriterFilter@7727c40, org.springframework.web.filter.CorsFilter@714cbaf0, org.springframework.security.web.authentication.logout.LogoutFilter@7901ebed, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@dc1ba5d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ad7ddaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e838a26, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@aadae24, org.springframework.security.web.session.SessionManagementFilter@56994721, org.springframework.security.web.access.ExceptionTranslationFilter@62d04fe4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@74f322dd] 
+2021:01:28 21:50:34.487 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2021:01:28 21:50:34.571 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html] 
+2021:01:28 21:50:34.821 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Using default implementation for ThreadExecutor 
+2021:01:28 21:50:34.832 INFO  --- [restartedMain] o.quartz.core.SchedulerSignalerImpl : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2021:01:28 21:50:34.833 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Quartz Scheduler v.2.3.2 created. 
+2021:01:28 21:50:34.833 INFO  --- [restartedMain] org.quartz.simpl.RAMJobStore : RAMJobStore initialized. 
+2021:01:28 21:50:34.834 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2021:01:28 21:50:34.835 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance. 
+2021:01:28 21:50:34.835 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler version: 2.3.2 
+2021:01:28 21:50:34.835 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@70f815c2 
+2021:01:28 21:50:34.986 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 9001 (http) with context path '' 
+2021:01:28 21:50:34.987 INFO  --- [restartedMain] o.s.s.quartz.SchedulerFactoryBean : Starting Quartz Scheduler now 
+2021:01:28 21:50:34.987 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED started. 
+2021:01:28 21:50:34.996 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Started MesFrontApplication in 6.042 seconds (JVM running for 7.147) 
+2021:01:28 21:50:48.126 INFO  --- [Thread-5] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 21:50:48.163 INFO  --- [Thread-5] o.s.s.quartz.SchedulerFactoryBean : Shutting down Quartz Scheduler 
+2021:01:28 21:50:48.163 INFO  --- [Thread-5] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down. 
+2021:01:28 21:50:48.163 INFO  --- [Thread-5] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 21:50:48.163 INFO  --- [Thread-5] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete. 
+2021:01:28 21:50:48.164 INFO  --- [Thread-5] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2021:01:28 21:50:48.165 INFO  --- [Thread-5] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 21:50:48.169 INFO  --- [Thread-5] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:01:28 21:50:48.173 INFO  --- [Thread-5] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 
+2021:01:28 21:50:48.314 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 25704 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 21:50:48.314 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 21:50:48.639 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 21:50:48.675 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces. 
+2021:01:28 21:50:48.784 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 21:50:48.785 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 21:50:48.785 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 21:50:48.837 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 21:50:48.837 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 519 ms 
+2021:01:28 21:50:48.887 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 21:50:48.911 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 21:50:48.949 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Starting... 
+2021:01:28 21:50:49.053 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Start completed. 
+2021:01:28 21:50:49.098 INFO  --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021:01:28 21:50:49.099 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 21:50:49.118 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2021:01:28 21:50:49.260 INFO  --- [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f3353d09-68a8-41ec-aed0-b5e0385c34ee
+ 
+2021:01:28 21:50:49.270 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b506a60, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f5921a9, org.springframework.security.web.header.HeaderWriterFilter@2bdf7bef, org.springframework.web.filter.CorsFilter@6cbad37c, org.springframework.security.web.authentication.logout.LogoutFilter@b342bf6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6048b4fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a9831f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ac8274a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ed130c8, org.springframework.security.web.session.SessionManagementFilter@23aa8e6f, org.springframework.security.web.access.ExceptionTranslationFilter@26486d8a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@696d75e8] 
+2021:01:28 21:50:49.329 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2021:01:28 21:50:49.354 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html] 
+2021:01:28 21:50:49.413 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Using default implementation for ThreadExecutor 
+2021:01:28 21:50:49.414 INFO  --- [restartedMain] o.quartz.core.SchedulerSignalerImpl : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2021:01:28 21:50:49.414 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Quartz Scheduler v.2.3.2 created. 
+2021:01:28 21:50:49.414 INFO  --- [restartedMain] org.quartz.simpl.RAMJobStore : RAMJobStore initialized. 
+2021:01:28 21:50:49.414 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2021:01:28 21:50:49.414 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance. 
+2021:01:28 21:50:49.414 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler version: 2.3.2 
+2021:01:28 21:50:49.415 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@23912920 
+2021:01:28 21:50:49.437 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 9001 (http) with context path '' 
+2021:01:28 21:50:49.438 INFO  --- [restartedMain] o.s.s.quartz.SchedulerFactoryBean : Starting Quartz Scheduler now 
+2021:01:28 21:50:49.438 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED started. 
+2021:01:28 21:50:49.443 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Started MesFrontApplication in 1.199 seconds (JVM running for 21.594) 
+2021:01:28 21:50:49.445 INFO  --- [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged 
+2021:01:28 21:51:06.256 INFO  --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021:01:28 21:51:06.257 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2021:01:28 21:51:06.258 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms 
+2021:01:28 21:51:28.685 INFO  --- [RMI TCP Connection(4)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2021:01:28 21:51:28.686 INFO  --- [RMI TCP Connection(4)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 21:51:28.731 INFO  --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.quartz.SchedulerFactoryBean : Shutting down Quartz Scheduler 
+2021:01:28 21:51:28.731 INFO  --- [RMI TCP Connection(4)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down. 
+2021:01:28 21:51:28.731 INFO  --- [RMI TCP Connection(4)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 21:51:28.731 INFO  --- [RMI TCP Connection(4)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete. 
+2021:01:28 21:51:28.731 INFO  --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2021:01:28 21:51:28.732 INFO  --- [RMI TCP Connection(4)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 21:51:28.733 INFO  --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Shutdown initiated... 
+2021:01:28 21:51:28.734 INFO  --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Shutdown completed. 
+2021:01:28 21:53:54.979 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 31592 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 21:53:54.982 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 21:53:55.029 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2021:01:28 21:53:55.030 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2021:01:28 21:53:55.789 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 21:53:55.869 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces. 
+2021:01:28 21:53:56.519 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 21:53:56.530 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 21:53:56.531 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 21:53:56.708 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 21:53:56.708 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1677 ms 
+2021:01:28 21:53:56.919 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 21:53:56.981 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.27.Final 
+2021:01:28 21:53:57.170 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:01:28 21:53:57.340 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 21:53:57.986 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:01:28 21:53:58.174 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:01:28 21:53:58.250 INFO  --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021:01:28 21:53:58.258 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 21:53:58.299 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2021:01:28 21:53:58.808 INFO  --- [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a4e1feb1-fcc9-4f72-9dc5-9d85d863218f
+ 
+2021:01:28 21:53:58.928 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48736061, org.springframework.security.web.context.SecurityContextPersistenceFilter@1227f071, org.springframework.security.web.header.HeaderWriterFilter@622c9980, org.springframework.web.filter.CorsFilter@7221721b, org.springframework.security.web.authentication.logout.LogoutFilter@3c828cb3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@531d4dec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38365e70, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4319e14a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b5eadde, org.springframework.security.web.session.SessionManagementFilter@7901ebed, org.springframework.security.web.access.ExceptionTranslationFilter@12215607, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@549d2805] 
+2021:01:28 21:53:59.035 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2021:01:28 21:53:59.120 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html] 
+2021:01:28 21:53:59.354 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Using default implementation for ThreadExecutor 
+2021:01:28 21:53:59.367 INFO  --- [restartedMain] o.quartz.core.SchedulerSignalerImpl : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2021:01:28 21:53:59.367 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Quartz Scheduler v.2.3.2 created. 
+2021:01:28 21:53:59.368 INFO  --- [restartedMain] org.quartz.simpl.RAMJobStore : RAMJobStore initialized. 
+2021:01:28 21:53:59.369 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2021:01:28 21:53:59.369 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance. 
+2021:01:28 21:53:59.369 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler version: 2.3.2 
+2021:01:28 21:53:59.369 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5a152aa3 
+2021:01:28 21:53:59.509 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 9001 (http) with context path '' 
+2021:01:28 21:53:59.510 INFO  --- [restartedMain] o.s.s.quartz.SchedulerFactoryBean : Starting Quartz Scheduler now 
+2021:01:28 21:53:59.510 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED started. 
+2021:01:28 21:53:59.518 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Started MesFrontApplication in 5.084 seconds (JVM running for 6.168) 
+2021:01:28 21:54:05.016 INFO  --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021:01:28 21:54:05.017 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2021:01:28 21:54:05.017 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 0 ms 
+2021:01:28 22:29:40.018 INFO  --- [RMI TCP Connection(39)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2021:01:28 22:29:40.020 INFO  --- [RMI TCP Connection(39)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 22:29:40.057 INFO  --- [RMI TCP Connection(39)-127.0.0.1] o.s.s.quartz.SchedulerFactoryBean : Shutting down Quartz Scheduler 
+2021:01:28 22:29:40.057 INFO  --- [RMI TCP Connection(39)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down. 
+2021:01:28 22:29:40.057 INFO  --- [RMI TCP Connection(39)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 22:29:40.057 INFO  --- [RMI TCP Connection(39)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete. 
+2021:01:28 22:29:40.058 INFO  --- [RMI TCP Connection(39)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2021:01:28 22:29:40.059 INFO  --- [RMI TCP Connection(39)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 22:29:40.063 INFO  --- [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:01:28 22:29:40.066 INFO  --- [RMI TCP Connection(39)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 
+2021:01:28 22:32:11.168 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 26196 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 22:32:11.171 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 22:32:11.229 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2021:01:28 22:32:11.230 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2021:01:28 22:32:12.435 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 22:32:12.600 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 2 JPA repository interfaces. 
+2021:01:28 22:32:13.668 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 22:32:13.685 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 22:32:13.686 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 22:32:13.848 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 22:32:13.848 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2617 ms 
+2021:01:28 22:32:14.119 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 22:32:14.188 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.27.Final 
+2021:01:28 22:32:14.358 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:01:28 22:32:14.524 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 22:32:15.203 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:01:28 22:32:15.416 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:01:28 22:32:15.493 INFO  --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021:01:28 22:32:15.504 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 22:32:15.557 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2021:01:28 22:32:16.105 INFO  --- [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 568de333-908d-4712-b54e-eac69b1f1d83
+ 
+2021:01:28 22:32:16.242 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e1720e6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3af7200a, org.springframework.security.web.header.HeaderWriterFilter@4a5d10ef, org.springframework.web.filter.CorsFilter@4c9987f1, org.springframework.security.web.authentication.logout.LogoutFilter@4f8535c6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7aff79f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48b03ccc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@561e8184, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@399d9f30, org.springframework.security.web.session.SessionManagementFilter@547f0027, org.springframework.security.web.access.ExceptionTranslationFilter@4d285a06, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22cf872] 
+2021:01:28 22:32:16.360 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2021:01:28 22:32:16.437 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html] 
+2021:01:28 22:32:16.670 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Using default implementation for ThreadExecutor 
+2021:01:28 22:32:16.683 INFO  --- [restartedMain] o.quartz.core.SchedulerSignalerImpl : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2021:01:28 22:32:16.683 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Quartz Scheduler v.2.3.2 created. 
+2021:01:28 22:32:16.684 INFO  --- [restartedMain] org.quartz.simpl.RAMJobStore : RAMJobStore initialized. 
+2021:01:28 22:32:16.685 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2021:01:28 22:32:16.685 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance. 
+2021:01:28 22:32:16.685 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler version: 2.3.2 
+2021:01:28 22:32:16.685 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3d2ae203 
+2021:01:28 22:32:16.822 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 9001 (http) with context path '' 
+2021:01:28 22:32:16.822 INFO  --- [restartedMain] o.s.s.quartz.SchedulerFactoryBean : Starting Quartz Scheduler now 
+2021:01:28 22:32:16.823 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED started. 
+2021:01:28 22:32:16.830 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Started MesFrontApplication in 6.306 seconds (JVM running for 7.501) 
+2021:01:28 22:32:21.561 INFO  --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021:01:28 22:32:21.562 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2021:01:28 22:32:21.563 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms 
+2021:01:28 22:59:27.443 INFO  --- [RMI TCP Connection(31)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2021:01:28 22:59:27.445 INFO  --- [RMI TCP Connection(31)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 22:59:27.484 INFO  --- [RMI TCP Connection(31)-127.0.0.1] o.s.s.quartz.SchedulerFactoryBean : Shutting down Quartz Scheduler 
+2021:01:28 22:59:27.484 INFO  --- [RMI TCP Connection(31)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down. 
+2021:01:28 22:59:27.484 INFO  --- [RMI TCP Connection(31)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:28 22:59:27.484 INFO  --- [RMI TCP Connection(31)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete. 
+2021:01:28 22:59:27.486 INFO  --- [RMI TCP Connection(31)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2021:01:28 22:59:27.487 INFO  --- [RMI TCP Connection(31)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 22:59:27.492 INFO  --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:01:28 22:59:27.497 INFO  --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 
+2021:01:28 22:59:48.222 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Starting MesFrontApplication using Java 15.0.1 on DESKTOP-LTCNI0H with PID 24168 (C:\Users\rocks\git\MESPROJECT\MesProject\mesFront\bin\main started by dRocks in C:\Users\rocks\git\MESPROJECT\MesProject\mesFront) 
+2021:01:28 22:59:48.226 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : No active profile set, falling back to default profiles: default 
+2021:01:28 22:59:48.285 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2021:01:28 22:59:48.285 INFO  --- [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2021:01:28 22:59:49.084 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:01:28 22:59:49.167 INFO  --- [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces. 
+2021:01:28 22:59:49.852 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 9001 (http) 
+2021:01:28 22:59:49.863 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:01:28 22:59:49.864 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.41] 
+2021:01:28 22:59:50.042 INFO  --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:01:28 22:59:50.043 INFO  --- [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1757 ms 
+2021:01:28 22:59:50.253 INFO  --- [restartedMain] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:01:28 22:59:50.331 INFO  --- [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.27.Final 
+2021:01:28 22:59:50.488 INFO  --- [restartedMain] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:01:28 22:59:50.653 INFO  --- [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect 
+2021:01:28 22:59:51.347 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:01:28 22:59:51.531 INFO  --- [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:01:28 22:59:51.602 INFO  --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021:01:28 22:59:51.612 INFO  --- [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:28 22:59:51.654 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2021:01:28 22:59:52.171 INFO  --- [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ea0ea898-11a3-4e14-8e11-728e8e2d81cb
+ 
+2021:01:28 22:59:52.285 INFO  --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14c92dd9, org.springframework.security.web.context.SecurityContextPersistenceFilter@38091398, org.springframework.security.web.header.HeaderWriterFilter@695f8ca1, org.springframework.web.filter.CorsFilter@1cb4cb87, org.springframework.security.web.authentication.logout.LogoutFilter@69736ec, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4beb72c1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7901ebed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52e49182, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@230d4776, org.springframework.security.web.session.SessionManagementFilter@1eddccc5, org.springframework.security.web.access.ExceptionTranslationFilter@66229e2f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73a1aa5e] 
+2021:01:28 22:59:52.406 INFO  --- [restartedMain] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2021:01:28 22:59:52.477 INFO  --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html] 
+2021:01:28 22:59:52.731 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Using default implementation for ThreadExecutor 
+2021:01:28 22:59:52.744 INFO  --- [restartedMain] o.quartz.core.SchedulerSignalerImpl : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl 
+2021:01:28 22:59:52.744 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Quartz Scheduler v.2.3.2 created. 
+2021:01:28 22:59:52.744 INFO  --- [restartedMain] org.quartz.simpl.RAMJobStore : RAMJobStore initialized. 
+2021:01:28 22:59:52.745 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+ 
+2021:01:28 22:59:52.745 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance. 
+2021:01:28 22:59:52.745 INFO  --- [restartedMain] org.quartz.impl.StdSchedulerFactory : Quartz scheduler version: 2.3.2 
+2021:01:28 22:59:52.745 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1880916a 
+2021:01:28 22:59:52.897 INFO  --- [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 9001 (http) with context path '' 
+2021:01:28 22:59:52.898 INFO  --- [restartedMain] o.s.s.quartz.SchedulerFactoryBean : Starting Quartz Scheduler now 
+2021:01:28 22:59:52.898 INFO  --- [restartedMain] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED started. 
+2021:01:28 22:59:52.905 INFO  --- [restartedMain] k.c.t.sf.MesFrontApplication : Started MesFrontApplication in 5.257 seconds (JVM running for 6.34) 
+2021:01:28 22:59:56.674 INFO  --- [http-nio-9001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021:01:28 22:59:56.675 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2021:01:28 22:59:56.676 INFO  --- [http-nio-9001-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms 

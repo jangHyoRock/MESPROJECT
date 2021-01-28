@@ -1,0 +1,74 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Dialog
+        id="inspectionManagementDialog"
+        class="dialog-width"
+        title="설비 정기 점검 관리">
+        <Button
+            text="❌"
+            press=".onCloseManagementDialog"
+            class="sapUiSmallMarginEnd"/>
+        <content>
+            <VBox class="Fragment-padding">
+                <HBox
+                	class="box-center">
+                    <Text text="{i18n>columnMechine}" class="left-margin rowbox"/>
+                    <l:VerticalLayout
+                        class="left-margin"
+                        width="100%">
+                        <ActionSelect>
+                            <items>
+                                <core:Item key="{Name}" text="{Name}" />
+                            </items>
+                        </ActionSelect>
+                    </l:VerticalLayout>
+                </HBox>
+                <HBox
+                	class="box-center">
+                    <Text text="{i18n>columnMaintenanceProvision}" class="left-margin rowbox"/>
+                    <l:VerticalLayout
+                        class="left-margin right-margin"
+                        width="100px">
+                        <ActionSelect>
+                            <items>
+                                <core:Item key="{Name}" text="{Name}" />
+                            </items>
+                        </ActionSelect>
+                    </l:VerticalLayout>
+                    <Input placeholder="정비항목 추가" class="left-margin"/>
+                    <Button text="추가"/>
+                </HBox>
+                <HBox
+                	class="box-center">
+                    <Text text="{i18n>columnMaintenancePeriod}" class="left-margin rowbox"/>
+                    <l:VerticalLayout
+                        class="left-margin"
+                        width="100%">
+                        <ActionSelect>
+                            <items>
+                                <core:Item key="{Name}" text="{Name}" />
+                            </items>
+                        </ActionSelect>
+                    </l:VerticalLayout>
+                </HBox>
+                <HBox
+                	class="box-center">
+                    <Text text="{i18n>columnMaintenanceBasicDate}" class="left-margin rowbox"/>
+                    <Input type="text" class="left-margin"/>
+                </HBox>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button
+                text="등록"
+                press=".onSaveManagemnetDialog"/>
+        </beginButton>
+        <endButton>
+            <Button
+                text="닫기"
+                press=".onCloseManagementDialog"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

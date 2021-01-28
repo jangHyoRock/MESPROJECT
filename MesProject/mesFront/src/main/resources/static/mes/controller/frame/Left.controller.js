@@ -20,7 +20,8 @@ sap.ui.define([
 			
 			oMenuList.forEach(function(oMenuInfo) {
 				
-				var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
+				//var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
+				var _menuId = oMenuInfo.menu_id;
 				
 				if(oMenuInfo.p_menu_id == "Main"){
 					
@@ -90,8 +91,8 @@ sap.ui.define([
 			var key = e.getSource().getSelectedKey();
 			this.getRouter().navTo(key);
 			
-			var pMenuId = key.substring(0, key.indexOf("."));
-			window.header.tab.setSelectedKey(pMenuId+"."+pMenuId);
+			//var pMenuId = key.substring(0, key.indexOf("."));
+			window.header.tab.setSelectedKey(key);
 		}
 		
 	});

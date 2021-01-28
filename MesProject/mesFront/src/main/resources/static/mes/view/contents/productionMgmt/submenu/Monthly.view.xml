@@ -1,0 +1,123 @@
+<mvc:View
+	controllerName="tips.mes.controller.contents.productionMgmt.submenu.Monthly"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Panel accessibleRole="Region">
+		<Text text="검색 기준일(년)"/>
+        <Input type="Month" width="40%"/>
+		<Table
+			id="MonthlyList"
+			class="sapUiResponsiveMargin"
+			width="auto"
+			items="{
+				path : 'invoice>/Monthly'
+			}">
+			<columns>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="true"
+					width="5em">
+					<Text text="{i18n>columnItem}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="true">
+					<Text text="{i18n>columnSize}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="true">
+					<Text text="{i18n>columnDivision}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnOne}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnTwo}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnThree}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnFour}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnFive}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnSix}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnSeven}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnEight}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnNine}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnTen}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnEleven}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+                    <Text text="{i18n>columnTweleve}{i18n>columnMonth}"/>
+				</Column>
+				<Column
+					hAlign="End"
+					minScreenWidth="Small"
+					demandPopin="true">
+					<Text text="{i18n>columnTotal}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{invoice>Name}"/>
+						<Text text="{invoice>Size}"/>
+						<Text text="{invoice>Division}"/>
+						<Text text="{invoice>One}"/>
+						<Text text="{invoice>Two}"/>
+						<Text text="{invoice>Three}"/>
+						<Text text="{invoice>Four}"/>
+						<Text text="{invoice>Five}"/>
+						<Text text="{invoice>Six}"/>
+						<Text text="{invoice>Seven}"/>
+						<Text text="{invoice>Eight}"/>
+						<Text text="{invoice>Nine}"/>
+						<Text text="{invoice>Ten}"/>
+						<Text text="{invoice>Eleven}"/>
+						<Text text="{invoice>Tweleve}"/>
+						<Text text="{invoice>Total}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Panel>
+</mvc:View>

@@ -1,0 +1,9 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core">
+	<l:HorizontalLayout class="titleArea">
+		<Text text="{viewTitleDesc>/title}" class="headCopy" />
+		<Text text="{viewTitleDesc>/desc}" class="DescCopy" />
+	</l:HorizontalLayout>
+</core:FragmentDefinition>

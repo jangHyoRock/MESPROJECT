@@ -1,0 +1,66 @@
+<mvc:View
+    controllerName="tips.mes.controller.contents.productionMgmt.submenu.Weekly"
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Text text=" "/>
+    <Panel accessibleRole="Region">
+        <Table
+            id="weekly"
+            class=""
+            width="auto">
+            <columns>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="6em">
+                    <Text text="{i18n>columnItem}"/>
+                </Column>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="5em">
+                    <Text text="{i18n>columnSize}"/>
+                </Column>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="3em">
+                    <Text text="{i18n>columnOne}{i18n>columnWeek}"/>
+                </Column>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="3em">
+                    <Text text="{i18n>columnTwo}{i18n>columnWeek}"/>
+                </Column>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="3em">
+                    <Text text="{i18n>columnThree}{i18n>columnWeek}"/>
+                </Column>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="3em">
+                    <Text text="{i18n>columnFour}{i18n>columnWeek}"/>
+                </Column>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="3em">
+                    <Text text="{i18n>columnFive}{i18n>columnWeek}"/>
+                </Column>
+                <Column
+                    minScreenWidth="Small"
+                    demandPopin="true"
+                    width="5em">
+                    <Text text="{i18n>columnTotal}"/>
+                </Column>
+            </columns>
+        </Table>
+    </Panel>
+</mvc:View>

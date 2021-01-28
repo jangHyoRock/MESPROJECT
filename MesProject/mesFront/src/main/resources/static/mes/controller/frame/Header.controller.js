@@ -71,12 +71,13 @@ sap.ui.define([
 			
 			oMenuList.forEach(function(oMenuInfo) {
 				if(oMenuInfo.p_menu_id == "Main"){
-					//var _menuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
+					var _FmenuId = Formatter.formatFirstLowerCase(oMenuInfo.menu_id);
 					var _menuId = oMenuInfo.menu_id;
 					var oIconTabFilter = new sap.m.IconTabFilter({
 						id: _menuId,
 						text: oMenuInfo.menu_name,
-						key: _menuId + "." + oMenuInfo.menu_id
+						key: _menuId,
+						
 					});
 					
 					window.header.tab.addItem(oIconTabFilter);

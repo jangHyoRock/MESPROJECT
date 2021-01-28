@@ -1,0 +1,116 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog
+        id="itemmanage"
+        title="품목관리"
+        contentWidth="51%">
+        <content>
+            <HBox>
+                <Title text="유형" class="sapUiSmallMargin" />
+                    <ActionSelect
+                        items="{
+                                    path : 'combo>/Type'
+                                }"
+                        width="200px" class="sapUiMediumMarginEnd input">
+                                <core:Item  key="{combo>key}" text="{combo>text}" />
+                    </ActionSelect>
+                <Title text="품목명" class="sapUiSmallMargin" />
+                <Input placeholder="30자 내외" width="200px" class="sapUiMediumMarginEnd input2" />
+            </HBox>
+
+            <HBox>
+                <Title text="규격" class="sapUiSmallMargin" />
+                <Input placeholder="50자 내외" width="200px" class="sapUiMediumMarginEnd input" />
+                <Title text="구매단가" class="sapUiSmallMargin" />
+                <Input type="Number" placeholder="숫자만 입력" width="200px" class="sapUiMediumMarginEnd" />
+            </HBox>
+
+            <HBox>
+                <Title text="판매단가" class="sapUiSmallMargin" />
+                <Input type="Number" placeholder="숫자만 입력" width="200px" class="sapUiMediumMarginEnd" />
+                <Title text="창고" class="sapUiSmallMargin" />
+                    <ActionSelect
+                        items="{
+                                    path : 'combo>/Container'
+                                }"
+                        width="200px" class="sapUiMediumMarginEnd input">
+                                <core:Item  key="{combo>key}" text="{combo>text}"  />
+                    </ActionSelect>
+            </HBox>
+
+            <HBox>
+                <Title text="매입처" class="sapUiSmallMargin" />
+                    <ActionSelect
+                        items="{
+                                    path : 'combo>/Buyer'
+                                }"
+                        width="200px" class="sapUiMediumMarginEnd input2">
+                                <core:Item  key="{combo>key}" text="{combo>text}" />
+                    </ActionSelect>
+                <Button text="저장" class="sapUiTinyMarginEnd button4"  />
+                <Button text="닫기" press=".onCloseDialog2" />
+
+            </HBox>
+            <Panel class="panel">
+                <Table>
+                    <headerToolbar>
+                        <Toolbar>
+                            <Text text="Show" class="selectext" />
+                            <ActionSelect
+                                items="{
+                                    path : 'combo>/ComboBox'
+                                }" class=" select">
+                                <core:Item  key="{combo>key}" text="{combo>text}" width="40%" />
+                            </ActionSelect>
+                            <Text text="entries" class="selectext sapUiLargeMarginEnd" />
+                            <Text text="Search" class="selectext selectmargin sapUiLargeMarginBegin"  />
+                            <SearchField 
+                            	search=".onFilterInvoices"
+                            	showSearchButton="false"
+                            	class= "field1"
+                            	/>
+                        </Toolbar>
+                    </headerToolbar>
+                <columns>
+                    <Column>
+                    <Text text="#" />
+                    </Column>
+                    <Column>
+                    <Text text="매입처" />
+                    </Column>
+                    <Column>
+                    <Text text="유형" />
+                    </Column>
+                    <Column>
+                    <Text text="품명" />
+                    </Column>
+                    <Column>
+                    <Text text="규격" />
+                    </Column>
+                    <Column>
+                    <Text text="구매단가" />
+                    </Column>
+                    <Column>
+                    <Text text="판매단가" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="1" />
+                            <Text text="니토무역" />
+                            <Text text="[자제] 필요자제" />
+                            <Text text="LS엠트론" />
+                            <Text text="2.8V600F" />
+                            <Text text="0," />
+                            <Text text="0" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            </Panel>
+
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

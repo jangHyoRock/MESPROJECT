@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Dialog
+        id="settingDialog"
+        title="근태 관리 설정">
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnOrder}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="order_no"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnSupplier}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="customers"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnDeadline}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="deadline" type="Date"/>
+        </HBox><HBox class="HBox-rows">
+            <Text text="{i18n>columnOrder}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="order_no"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnSupplier}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="customers"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnDeadline}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="deadline" type="Date"/>
+        </HBox>
+        <Button
+            text="저장"
+            press=".onSaveDialog"/>
+        <Button
+            text="닫기"
+            press=".onCloseDialog"/>
+    </Dialog>
+</core:FragmentDefinition>

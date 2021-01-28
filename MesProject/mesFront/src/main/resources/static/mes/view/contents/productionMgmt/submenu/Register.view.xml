@@ -1,0 +1,102 @@
+<mvc:View
+	controllerName="tips.mes.controller.contents.productionMgmt.submenu.Register"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Text text="검색 기준일"/>
+	<Panel accessibleRole="Region">
+		<headerToolbar>
+			<Toolbar>
+				<Input type="Date" width="30%"/>
+				<ToolbarSpacer/>
+				<Text text="Search:"/>
+				<SearchField
+					width="20%"
+					search=".onFilterInvoices"
+					ariaLabelledBy="searchFieldLabel"
+					ariaDescribedBy="searchFieldDescription"/>
+			</Toolbar>
+		</headerToolbar>
+		<Table
+			id="idTable"
+			class="sapUiResponsiveMargin"
+			width="auto"
+			items="{
+				path : 'oModel3>/'
+			}">
+			<columns>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="true"
+					width="4em">
+					<Text text="{i18n>columnNumber}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					width="12em"
+					demandPopin="true">
+					<Text text="{i18n>columnOrder}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="true">
+					<Text text="{i18n>columnSupplier}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false"
+					width="6em">
+					<Text text="{i18n>columnName}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+					<Text text="{i18n>columnSize}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+					<Text text="{i18n>columnQuantity}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					width="8em">
+					<Text text="{i18n>columnDeadline}"/>
+				</Column>
+				<Column
+					minScreenWidth="Small"
+					demandPopin="false">
+					<Text text="{i18n>columnResource}"/>
+				</Column>
+				<Column>
+					<Text text="{i18n>columnAmount}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem
+					type="Navigation"
+					press=".onPress">
+					<cells>
+						<ObjectNumber
+							number="{
+								parts: [{path: 'oModel3>product_no'}],
+								formatOptions: {
+									showMeasure: true
+								}
+							}"/>
+						<Text text="{oModel3>order_no}"/>
+						<Text text="{oModel3>customers}"/>
+						<Text text="{oModel3>product_name}"/>
+						<Text text="{oModel3>product_size}"/>
+						<ObjectNumber number="{oModel3>quantity}" emphasized="false"/>
+						<Text text="{oModel3>deadline}"/>
+						<Text text="{oModel3>materials}"/>
+						<ObjectNumber number="{oModel3>required_quantity}" emphasized="false"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Button
+			text="등록"
+			press=".onOpenRegisterDialog"/>
+	</Panel>
+</mvc:View>

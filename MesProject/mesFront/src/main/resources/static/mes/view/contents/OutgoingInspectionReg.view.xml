@@ -1,0 +1,114 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    controllerName="tips.mes.controller.contents.OutgoingInspectionReg"
+    >
+
+		<l:HorizontalLayout class="sapViewInner">
+		<l:content>
+			<VBox>
+			    <l:HorizontalLayout class="center">
+			        <Title text="출하검사등록" class="mainfont" />
+			    </l:HorizontalLayout>
+			
+				<VBox class="centerbox">
+		                        <HBox >
+		                            <Title text="검색 기준일" class="secondfont" />
+		                        </HBox>
+		                
+		                <SearchField
+		                    width="26%"
+		                    search=".onFilterInvoices"
+		                    ariaLabelledBy="searchFieldLabel"
+		                    ariaDescribedBy="searchFieldDescription"
+		                    placeholder="201020/09/22~2020/12/22" 
+		                    class="field0-search"/>
+		                <HBox>
+		                            <Text text="Show" class="selectext " />
+		                            <ActionSelect
+		                                items="{
+		                                    path : 'combo>/ComboBox'
+		                                }"
+		                                autoAdjustWidth ="true"
+		                                maxWidth="80% "
+		                                class=" select">
+		                                <core:Item key="{combo>key}" text="{combo>text}" />
+		                            </ActionSelect>
+		                            <Text text="entries" class="selectext" />
+		                        	<HBox class="hbox2">
+			                            <Text text="Search" class="selectext2" />
+			                            <ToolbarSpacer />
+			                            <SearchField  
+			                            	search=".onFilterInvoices"
+			                            	showSearchButton="false"
+			                            	class="field1" />
+		                            </HBox>
+		                </HBox>
+		
+		    	<l:HorizontalLayout class="table">
+		        <Table
+		            id="invoiceList"
+		            width="auto"
+		            items="{
+		                path : 'invoice>/Invoices'
+		            }">
+		            
+		            <columns>
+		                <Column
+		                minScreenWidth="Small"
+		                demandPopin="true"
+		                width="8rem">
+		                <Text text="#1" />
+		                </Column>
+		                <Column>
+		                <Text text="수주 No" />
+		                </Column>
+		                <Column>
+		                <Text text="고객사" />
+		                </Column>
+		                <Column>
+		                <Text text="품목명" />
+		                </Column>
+		                <Column>
+		                <Text text="규격" />
+		                </Column>
+		                <Column>
+		                <Text text="작업자" />
+		                </Column>
+		                <Column>
+		                <Text text="납품수량" />
+		                </Column>
+		                <Column>
+		                <Text text="최종양품" />
+		                </Column>
+		                <Column>
+		                <Text text="출고수량" />
+		                </Column>
+		            </columns>
+		            <items>
+		                <ColumnListItem>
+		                    <cells>
+		                        <Text text="{invoice>num1}" />
+		                        <Text text="{invoice>num2}" />
+		                        <Text text="{invoice>num3}" />
+		                        <Text text="{invoice>num4}" />
+		                        <Text text="{invoice>num5}" />
+		                        <Text text="{invoice>num6}" />
+		                        <Text text="{invoice>num7}" />
+		                        <Text text="{invoice>num8}" />
+		                        <Text text="{invoice>num9}" />
+		                    </cells>
+		                </ColumnListItem>
+		            </items>
+		        </Table>
+		        </l:HorizontalLayout>
+		    </VBox>
+		    </VBox>
+		
+		    <Button text="불량유형등록" press="Register" class="button" />
+        </l:content>
+	</l:HorizontalLayout>
+
+</mvc:View>

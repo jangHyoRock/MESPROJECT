@@ -1,0 +1,144 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:s="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls"
+	controllerName="tips.mes.controller.contents.ImportInspectionMgmt">
+	
+	<l:HorizontalLayout class="sapViewInner">
+	<l:content>
+        <VBox>
+            <l:HorizontalLayout class="center">
+                <Title text="수입검사관리" class="mainfont" />
+            </l:HorizontalLayout>
+
+        <VBox class="centerbox">
+                        <HBox >
+                            <Title text="검색 기준일" class="secondfont" />
+                        </HBox>
+                
+                <SearchField
+                    width="26%"
+                    search=".onFilterInvoices"
+                    ariaLabelledBy="searchFieldLabel"
+                    ariaDescribedBy="searchFieldDescription"
+                    placeholder="201020/09/22~2020/12/22"
+                    class="field0-search" />
+                        <HBox>
+                            <Text text="Show" class="selectext " />
+                            <ActionSelect
+                                items="{
+                                    path : 'combo>/ComboBox'
+                                }"
+                                autoAdjustWidth ="true"
+                                
+                                class=" select">
+                                <core:Item key="{combo>key}" text="{combo>text}" />
+                            </ActionSelect>
+                            <Text text="entries" class="selectext" />
+                        	<HBox class="hbox2" >
+                            <Text text="Search" class="selectext2" />
+                            <ToolbarSpacer />
+                            <SearchField  
+                            	search=".onFilterInvoices"
+                            	showSearchButton="false"
+                            	class="field1"
+                            	 />
+                            </HBox>
+                        </HBox>
+            <l:HorizontalLayout class="table">
+                
+               <!-- <Button text="check" press=".localApi" /> -->
+                
+                <Table  
+                id="invoiceList"
+		         width="auto"
+                 items="{
+                 	path : 'omodel2>/'
+                 }">
+
+                    <columns>
+                        <Column
+                        width="8rem">
+                        <Text text="#" />
+                        </Column >
+                        <Column>
+                        <Text text="수주NO" />
+                        </Column>
+                        <Column>
+                        <Text text="고객사" />
+                        </Column>
+                        <Column>
+                        <Text text="품명" />
+                        </Column>
+                        <Column>
+                        <Text text="규격" />
+                        </Column>
+                        <Column>
+                        <Text text="공정" />
+                        </Column>
+                        <Column>
+                        <Text text="발주일" />
+                        </Column>
+                        <Column>
+                        <Text text="분류" />
+                        </Column>
+                        <Column>
+                        <Text text="업체명" />
+                        </Column>
+                        <Column>
+                        <Text text="발주수량" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem
+                            type="Navigation"
+                            press=".onPress">
+                            <cells>
+                                <!--  <HBox>
+                                <IconTabBar >
+                                    <items>
+                                        <IconTabFilter
+                                        key="info"
+                                        icon="sap-icon://hint"
+                                        iconColor="Positive">
+                                            <Text text="발주금액 3,000,000" />
+                                            <Text text="입고수량 200" />
+                                            <Text text="입고금액 3,000,000" />
+                                            <Text text="결제" /> 
+                                            <Switch state="false" customTextOn=" " customTextOff=" " enabled="false">
+                                                <layoutData>
+                                                    <FlexItemData growFactor="1" />
+                                                </layoutData>
+                                            </Switch>  
+                                        </IconTabFilter>
+                                    </items>
+                                    </IconTabBar> -->
+                                <Text text="{omodel2>num1}" />
+                                <!--  </HBox>-->
+                            </cells>
+
+                            <cells >
+                                <Text text="{omodel2>num2}" />
+                                <Text text="{omodel2>num3}" />
+                                <Text text="{omodel2>num4}" />
+                                <Text text="{omodel2>num5}" /> 
+                                <Text text="{omodel2>num6}" />
+                                <Text text="{omodel2>num7}" />
+                                <Text text="{omodel2>num8}" />
+                                <Text text="{omodel2>num9}" />
+                                <Text text="{omodel2>num10}" />
+                            </cells>
+                        </ColumnListItem>                     
+                    </items>  
+                </Table>  
+            </l:HorizontalLayout>
+        	</VBox>
+        	</VBox>
+        </l:content>
+	</l:HorizontalLayout>
+       
+</mvc:View>

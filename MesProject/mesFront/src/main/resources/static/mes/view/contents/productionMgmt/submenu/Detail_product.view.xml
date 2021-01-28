@@ -1,0 +1,94 @@
+<mvc:View
+    controllerName="tips.mes.controller.contents.productionMgmt.submenu.Detail_product"
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Text text="생산관리계획" class="title-font-style page-title"/>
+    <Panel accessibleRole="Region">
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnOrder}" class="sapUiSmallMarginEnd rows-width"/>
+            <Text text="{b>/order_no}"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnSupplier}" class="sapUiSmallMarginEnd rows-width"/>
+            <Text text="{b>/customers}"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnDeadline}" class="sapUiSmallMarginEnd rows-width"/>
+            <Text text="{b>/deadline}"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnName}" class="sapUiSmallMarginEnd rows-width"/>
+            <Text text="{b>/product_name}"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnSize}" class="sapUiSmallMarginEnd rows-width"/>
+            <Text text="{b>/product_size}"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="{i18n>columnQuantity}" class="sapUiSmallMarginEnd rows-width"/>
+            <Text text="{b>/quantity}"/>
+        </HBox>
+        <HBox class="HBox-rows">
+        <!-- 생산 수량 -->
+            <Text text="{i18n>quantityProduction}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input type="Number" value="{b>/product_quantity}" placeholder="생산수량" width="30em"/>
+        </HBox>
+        <HBox class="HBox-rows">
+        <!-- 계획 기간 -->
+            <Text text="{i18n>planningPeriod}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input type="Date" value="{b>/start_date}"/>
+            <Text text="~"/>
+            <Input type="Date" value="{b>/end_date}"/>
+        </HBox>
+        <HBox class="HBox-rows">
+        <!-- 원자재 -->
+            <Text text="{i18n>columnResource}" class="sapUiSmallMarginEnd rows-width"/>
+            <l:VerticalLayout
+                class=""
+                width="100%">
+                <ActionSelect
+                    id="select"
+                    items="{
+                        path: '/Resource',
+                        sorter: { path: 'Name' }
+                    }">
+                    <items>
+                        <core:Item key="{Name}" text="{Name}"/>
+                    </items>
+                </ActionSelect>
+            </l:VerticalLayout>
+        </HBox>
+        <HBox class="HBox-rows">
+        <!-- 소요량 -->
+            <Text text="{i18n>columnAmount}" class="sapUiSmallMarginEnd rows-width"/>
+            <Input type="Number" value="{b>/required_quantity}" placeholder="소요량" width="30em"/>
+        </HBox>
+        <HBox class="HBox-rows">
+        <!-- 외주 여부 -->
+            <Text text="{i18n>outsorucing}" class="sapUiSmallMarginEnd rows-width"/>
+            <l:VerticalLayout
+                class=""
+                width="100%">
+                <ActionSelect
+                    id="select_2"
+                    items="{
+                        path: '/Outsourcing',
+                        sorter: { path: 'Name' }
+                    }">
+                    <items>
+                        <core:Item key="{Name}" text="{Name}" />
+                    </items>
+                </ActionSelect>
+            </l:VerticalLayout>
+        </HBox>
+        <Button
+            text="저장"
+            press=".onNavSave"/>
+        <Button
+            text="목록"
+            press=".onNavBack"/>
+    </Panel>
+</mvc:View>

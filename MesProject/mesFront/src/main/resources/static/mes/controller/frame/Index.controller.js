@@ -25,14 +25,14 @@ sap.ui.define([
 				jQuery.sap.log.error("Sorry, but the hash '" + sHash + "' is invalid.", "The resource was not found.");
 			});
 			
-			// 페이지 마다 Title, Descryption 설정
+			// �럹�씠吏� 留덈떎 Title, Descryption �꽕�젙
 			this.setModel(new JSONModel({
 				title : '',
 				desc : ''
 			}), "viewTitleDesc");
 		},
 		
-		// 메뉴 목록 콜백
+		// 硫붾돱 紐⑸줉 肄쒕갚
 		callbackAjaxMenuInfo : function (oModel) {
 			var oResult = oModel.getData().result.MenuList;
 			var _self = this;
@@ -46,7 +46,7 @@ sap.ui.define([
 				if(oMenuInfo.p_menu_id == "Main"){
 					
 					oRouter.getTargets().addTarget(_menuIdLC, {viewName: _menuIdLC, viewLevel: index+1, viewId: _menuIdLC, rootView: _rootView});
-					oRouter.addRoute({name: _menuIdLC,pattern: _menuId + "/" + _menuId, target: _menuIdLC});
+					oRouter.addRoute({name: _menuIdLC,pattern: _menuIdLC + "/" + _menuId, target: _menuIdLC});
 				
 				}else{
 				
