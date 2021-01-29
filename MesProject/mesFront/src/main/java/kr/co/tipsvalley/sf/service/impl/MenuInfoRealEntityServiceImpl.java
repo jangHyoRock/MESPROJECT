@@ -3,6 +3,7 @@ package kr.co.tipsvalley.sf.service.impl;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,10 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
     	ArrayList<MenuInfoRealJson> mainMenuInfoJsonListObj = new ArrayList<MenuInfoRealJson>();
 
         List<MenuInfoValue> menuInfoValueByJPA = null;
+        
+		String locale = Locale.getDefault().toString();
              
-        menuInfoValueByJPA = this.menuInfoRealEntityRepository.findmenuAll();
+        menuInfoValueByJPA = this.menuInfoRealEntityRepository.findMenuDesc(locale);
         
         
         // JPA return value
@@ -45,6 +48,8 @@ public class MenuInfoRealEntityServiceImpl implements MenuInfoRealEntityService 
         	 mainMenuInfoJsonObj.setMenuname   (menuInfoValueEntity.getMenuname());
         	 mainMenuInfoJsonObj.setIcon       (menuInfoValueEntity.getIcon());
         	 mainMenuInfoJsonObj.setMenudesc   (menuInfoValueEntity.getMenudesc());
+        	 mainMenuInfoJsonObj.setLocale       (menuInfoValueEntity.getLocale());
+        	 mainMenuInfoJsonObj.setMenuTitle   (menuInfoValueEntity.getMenuTitle());
       	   
       	   
         	 mainMenuInfoJsonListObj.add(mainMenuInfoJsonObj);

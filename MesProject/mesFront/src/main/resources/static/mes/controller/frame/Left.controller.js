@@ -52,7 +52,7 @@ sap.ui.define([
 		,
 		onPressMenu: function(e) {
 			var b = e.getSource().getPressed();
-			var w = "200px";
+			var w = "250px";
 			var bg = "#2f3c48";
 			
 			if(!b){

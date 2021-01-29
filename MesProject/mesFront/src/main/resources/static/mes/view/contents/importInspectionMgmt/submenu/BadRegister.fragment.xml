@@ -1,0 +1,74 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog
+        id="badRegister"
+        title="불량 유형 설정"
+        contentWidth="40%">
+        <content>
+            <Title text="불량항목명" class="sapUiSmallMarginEnd " /> 
+            <Input value="" placeholder="불량유형추가(30자미만)" width="50%" />
+            <Button text="추가" />
+            
+            <Panel class="panel"> 
+                <Table>
+                    <headerToolbar>
+                    <Toolbar>
+                        <Text text="Show" class="selectext " />
+                            <ActionSelect
+                                items="{
+                                    path : 'combo>/ComboBox'
+                                }"
+                                autoAdjustWidth ="true"
+                                class=" select">
+                                <core:Item key="{combo>key}" text="{combo>text}" />
+                            </ActionSelect>
+                            <Text text="entries" class="selectext " />
+                        <HBox class="hbox2">   
+                        <Text text="Search" class="selectext selectmargin" />
+                            <SearchField  
+                            	search=".onFilterInvoices"
+                            	showSearchButton="false"
+                            	class="field1" />
+                       </HBox> 
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                    <Text text="" />
+                    </Column>
+                    <Column>
+                    <Text text="불량항목명" />
+                    </Column>
+                    <Column>
+                    <Text text="" />
+                    </Column>
+                    <Column>
+                    <Text text="사용유무" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="" />
+                            <Text text="단순불량" />
+                            <Text text="" />
+                            <Switch state="true" customTextOn=" " customTextOff=" ">
+                                <layoutData>
+                                    <FlexItemData growFactor="1" />
+                                </layoutData>
+                            </Switch>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            </Panel>
+
+        </content>
+        <beginButton>
+            <Button
+                text="닫기"
+                press=".onCloseDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

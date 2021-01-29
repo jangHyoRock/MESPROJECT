@@ -70,8 +70,8 @@ input:focus 	{ outline: 		none !important; border: none !important; outline-offs
 .contentArea >div:nth-child(1) 	{ width:   50% ; min-width: 510px;					   }
 .contentArea >div:nth-child(2) 	{ width:   50% ; min-width: 510px; margin-left:  32px; }
 .contentArea1					{ display: flex; justify-content: space-between; 	   }
-.contentArea1 >div:nth-child(1) { width:   30% ; min-width: 320px;					   }
-.contentArea1 >div:nth-child(2) { width:   70% ; min-width: 700px; margin-left:  32px; }
+.contentArea1 >div:nth-child(1) { width:   60% ; min-width: 500px;					   }
+.contentArea1 >div:nth-child(2) { width:   40% ; min-width: 320px; margin-left:  32px; }
 .contentArea100					{ display: flex; justify-content: space-between; 	   }
 .titleArea						{ width:    	100%		; 
 								  min-width: 	700px		; 
@@ -166,3 +166,41 @@ div[id$=--contents2] div[id$=--map] > div:first-child > div:first-child > div:nt
     box-shadow: 0 0 0 0.0625rem rgba(0,0,0,0.1), 0 0.125rem 0.5rem 0 rgba(0,0,0,0.1);
     border-radius: 0.25rem;
 }
+
+/* STYLE SETTING */
+.main-back {		background-color:#263238DE;	}
+.title-font-style {	font-weight: bold;	font-size: 1.3rem;	font-family: 'GmarketSansMedium', serif;}
+.main-title {		margin-top: 8px;	margin-left: 40px;	color: white;}
+.page-title	{		margin-top: 10px;	margin-left: 20px;}
+.HBox-rows {		height: 50px;		position: relative; align-items: center; margin-left: 30px;}
+.rows-width {		width: 60px}
+.Fragment-padding {	padding: 20px;}
+.left-padding {		padding-left: 20px;}
+.right-margin {		margin-right: 20px;}
+.bottom-margin {	padding-bottom: 20px;}
+.top-padding {		padding-top: 20px;}
+/* STYLE SETTING */
+
+
+/* DIALOG SETTING */
+.rowbox {		width: 130px;}
+.box-center {	display: flex;	align-items: center;}
+.button-right {	display: flex;	justify-content: flex-end;}
+.dialog-width {	width: 700px;}
+.long-input	{	width: 300px;}
+.short-input {	width: 130px;}
+.sapMBarContainer {	background: #eff4f9;	border-bottom: 1pt solid #a4a4a4;}
+.btn-right {	margin-left: 300px !important;}
+
+/*사용자관리*/
+.centerbox{background-color: #fff; background-clip : border-box; padding: 1.5rem; margin-bottom: 24px; border-radius: 0.25rem;}
+.input{height:26px;}
+.input2{height:26px; width: 80% !important;}
+.UserMgmt_text{font-weight: bold; margin: 0.3rem 0 0 0;}
+.UserMgmt_vbox{width:50%; }
+.UserMgmt_vbox>div:nth-child(2)>div{width : 90% !important; height:26px;} /*line-height : normal*/
+.UserMgmt_vbox>div:nth-child(2)>div span{line-height:normal;}
+.text_align input{text-align:right;}
+.text_reference{font-size:0.6rem;}
+.button{margin-left:85%;}
+

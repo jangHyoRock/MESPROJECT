@@ -30,6 +30,13 @@ sap.ui.define([
 				return;
 			}
 			return sVal.substring(0, 1).toLowerCase() + sVal.substr(1);
+		},
+		
+		formatFirstUpperCase: function(sVal) {
+			if (!sVal) {
+				return;
+			}
+			return sVal.substring(0, 1).toUpperCase() + sVal.substr(1);
 		}
     };
 });

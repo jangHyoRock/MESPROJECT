@@ -10,13 +10,9 @@
 				<l:content>
 			<VBox>
 				<!-- Title & Description Area -->
-				<l:HorizontalLayout class="titleArea">
-					<!-- <Text text="{i18n>mainTitle}" class="headCopy" /> -->
-					<Text text="기본설정" class="headCopy" />
-					<Text text="{i18n>mainDescription}" class="DescCopy" />
-				</l:HorizontalLayout>
-
+				<core:Fragment id="exportPrint" fragmentName="tips.mes.view.fragment.TitleDesc" type="XML" />
 				<!-- Overview Content & Table Area -->
+				
 				<l:HorizontalLayout class="contentArea">
 					<!-- Table Area -->
 					<VBox>

@@ -10,53 +10,116 @@
 		<l:content>
 			<VBox>
 				<!-- Title & Description Area -->
-				<l:HorizontalLayout class="titleArea">
-					<!-- <Text text="{i18n>contents3Title}" class="headCopy" /> -->
-					<Text text="거래처 관리" class="headCopy" />
-					<Text text="{i18n>contents3Description}" class="DescCopy" />
-				</l:HorizontalLayout>
+				<core:Fragment id="exportPrint" fragmentName="tips.mes.view.fragment.TitleDesc" type="XML" />
 
 				<!-- Overview Content & Table Area -->
-				<l:HorizontalLayout class="contentArea100">
-					<!-- Table Area -->
-					<VBox>
-						<Text text="Detail Information" class="subTitle" />
-						<t:Table id="idTable" selectionMode="None" rows="{product>/milk}" visibleRowCount="12" width="100%">
-							<t:columns>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Seasons" />
-									<t:template>
-										<Text text="{product>Seasons}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Revenue" />
-									<t:template>
-										<Text text="{product>Revenue}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Cost" />
-									<t:template>
-										<Text text="{product>Cost}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Target" />
-									<t:template>
-										<Text text="{product>Target}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Budget" />
-									<t:template>
-										<Text text="{product>Budget}"/>
-									</t:template>
-								</t:Column>
-							</t:columns>
-						</t:Table>
-					</VBox>
-				</l:HorizontalLayout>
+				<Panel>
+					<headerToolbar>
+						<Toolbar>
+							<ToolbarSpacer/>
+							<Text text="Search:"/>
+							<SearchField
+								width="20%"
+								search=".onFilterInvoices"
+								ariaLabelledBy="searchFieldLabel"
+								ariaDescribedBy="searchFieldDescription"/>
+						</Toolbar>
+					</headerToolbar>
+					<Table
+						id="idTable"
+						class="sapUiResponsiveMargin"
+						width="auto"
+						items="{
+							path : 'oModel3>/'
+						}">
+						<columns>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="true"
+								width="4em">
+								<Text text="#"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								width="12em"
+								demandPopin="true">
+								<Text text="분류"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="true">
+								<Text text="업체코드"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="false"
+								width="6em">
+								<Text text="업체명"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="false">
+								<Text text="대표"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="false">
+								<Text text="사업자번호"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								width="8em">
+								<Text text="유선전화"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="false">
+								<Text text="팩스"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="false">
+								<Text text="Email"/>
+							</Column>
+							<Column
+								minScreenWidth="Small"
+								demandPopin="false">
+								<Text text="사용유무"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem
+								type="Navigation"
+								press=".onPress">
+								<cells>
+									<ObjectNumber
+										number="{
+											parts: [{path: 'oModel3>product_no'}],
+											formatOptions: {
+												showMeasure: true
+											}
+										}"/>
+									<Text text="{oModel3>order_no}"/>
+									<Text text="{oModel3>customers}"/>
+									<Text text="{oModel3>product_name}"/>
+									<Text text="{oModel3>product_size}"/>
+									<ObjectNumber number="{oModel3>quantity}" emphasized="false"/>
+									<Text text="{oModel3>deadline}"/>
+									<Text text="{oModel3>materials}"/>
+									<ObjectNumber number="{oModel3>required_quantity}" emphasized="false"/>
+									<Switch state="true" customTextOn="진행" customTextOff="취소">
+		                                <layoutData>
+		                                    <FlexItemData growFactor="1" />
+		                                </layoutData>
+		                            </Switch>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<Button
+						text="등록"
+						press=".onOpenPartnerMgmtDialog"/>
+				</Panel>
 			</VBox>
 		</l:content>
 	</l:HorizontalLayout>

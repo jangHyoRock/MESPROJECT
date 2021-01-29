@@ -22,8 +22,32 @@ sap.ui.define([
 		
 		// View의 Title과 Description 설정
 		_onSetTitleDesc: function () {
-			var oCurrentPage = this.getRouter().getHashChanger().hash;
 			
+			var _oResult = window.index.menuList;
+			var oCurrentPage = this.getRouter().getHashChanger().hash;
+			oCurrentPage = oCurrentPage.split("/")[1];
+						
+			if(oCurrentPage == ""){
+					
+					var _oData = {
+									title : this.getResourceBundle().getText("mainTitle"),
+									desc : this.getResourceBundle().getText("mainDescription")
+					}
+					
+				}else{
+					for(var i=0;i<_oResult.length;i++){
+					
+						if(_oResult[i].menu_id == oCurrentPage){
+						
+							var _oData = {
+									title :_oResult[i].menu_title,
+									desc : _oResult[i].menu_desc
+								}
+						}
+					}
+				}
+				this.getModel("viewTitleDesc").setData(_oData);
+			/*
 			if(oCurrentPage == "") {
 				var _oData = {
 					title : this.getResourceBundle().getText("mainTitle"),
@@ -64,6 +88,7 @@ sap.ui.define([
 				desc : _desc
 			}
 			this.getModel("viewTitleDesc").setData(_oData);
+			*/
 		},
 		
 		onSetIconTabHeader: function () {

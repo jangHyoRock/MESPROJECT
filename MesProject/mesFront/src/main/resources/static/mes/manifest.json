@@ -57,11 +57,13 @@
 				"async": true
 			},
 			"routes": [
-				{ "name": "main", "pattern": "", "target": "main" }
+				{ "name": "main", "pattern": "", "target": "main" },
+				{ "name": "detail3", "pattern": "orderMgmt_detail", "target": "detail3"}
 			],
 			"targets": {
 				"main": { "viewId": "main", "viewName": "Main", "viewLevel": 1 },
-				"notFound":  { "viewPath": "tips.common.view", "viewName": "NotFound" }
+				"notFound":  { "viewPath": "tips.common.view", "viewName": "NotFound" },
+				"detail3": {"viewPath": "tips.mes.view.contents.orderMgmt.submenu","viewName": "orderMgmt_detail","viewLevel": 1,"viewId": "orderMgmt_detail"}
 			}
 		}
     }

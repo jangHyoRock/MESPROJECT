@@ -1,0 +1,62 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog
+        id="container"
+        title="창고관리"
+        contentWidth="40%">
+        <content>
+            <HBox>
+                <Input value="" placeholder="창고명칭 작성" class="sapUiSmallMarginBegin" />
+                <Button text="추가" />
+            </HBox>
+
+            <Panel class="panel">
+                <Table>
+                    <headerToolbar>
+                        <Toolbar>
+                            <Text text="Show" class="selectext" />
+                            <ActionSelect
+                                items="{
+                                    path : 'combo>/ComboBox'
+                                }"
+                                autoAdjustWidth ="true"
+                                maxWidth="80%"
+                                class="select">
+                                <core:Item  key="{combo>key}" text="{combo>text}" />
+                            </ActionSelect>
+                            <Text text="entries" class="selectext" />
+                            <HBox class="hbox2">
+                            <Text text="Search" class="selectext selectmargin"  />
+                            <SearchField search=".onFilterInvoices"
+                             			 showSearchButton="false" class="field1"  />
+                            </HBox>
+                        </Toolbar>
+                    </headerToolbar>
+                <columns>
+                    <Column>
+                    <Text text="#" />
+                    </Column>
+                    <Column>
+                    <Text text="창고명" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="1" />
+                            <Text text="창고-1" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            </Panel>
+
+        </content>
+        <beginButton>
+            <Button
+                icon="sap-icon://decline"
+                press=".onCloseDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

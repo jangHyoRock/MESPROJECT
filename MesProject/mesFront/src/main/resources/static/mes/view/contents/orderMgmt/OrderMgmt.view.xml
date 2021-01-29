@@ -1,0 +1,115 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    controllerName="tips.mes.controller.contents.orderMgmt.OrderMgmt">
+
+		<l:HorizontalLayout class="sapViewInner">
+		<l:content>
+	<ScrollContainer height="100%" width="100%" vertical="true" class="resposiveMaster">
+				<VBox>
+
+					<core:Fragment id="exportPrint" fragmentName="tips.mes.view.fragment.TitleDesc" type="XML" />	 
+				
+				    <VBox class="centerbox">
+						<HBox>
+							<Title text="검색 기준일" class="secondfont" />
+						</HBox>
+			        	<SearchField
+							width="26%"
+							placeholder="2020/09/22~2020/12/22"
+							class="searchfield sapUiLargeMarginBottom" />
+			
+			   			<HBox class="sapUiTinyMarginBottom">
+                            <Text text="Show" class="selectext sapUiTinyMarginEnd" />
+                            <ActionSelect
+                                items="{
+                                    path : 'combo>/ComboBox'
+                                }"
+                                autoAdjustWidth ="true"
+                                class=" select sapUiTinyMarginEnd">
+                                <core:Item key="{combo>key}" text="{combo>text}" />
+                            </ActionSelect>
+                            <Text text="entries" class="selectext" />
+                        	<HBox class="hbox">
+                            <Text text="Search" class="selectext sapUiTinyMarginEnd" />
+                            <ToolbarSpacer />
+                            <SearchField  
+                            	search=".onFilterInvoices"
+                            	showSearchButton="false"
+                            	class="field1" />
+                       		</HBox>
+			             </HBox>
+					        <l:HorizontalLayout class="table"> 
+					        <Table
+					            id="invoiceList"
+					            width="auto"
+					            items="{
+					                path : 'omodel2>/'
+					            }">
+					            <columns>
+					                <Column
+					                minScreenWidth="Small"
+					                demandPopin="true"
+					                width="8rem">
+					                <Text text="#1" />
+					                </Column>
+					                <Column>
+					                <Text text="수주NO" />
+					                </Column>
+					                <Column>
+					                <Text text="매입처" />
+					                </Column>
+					                <Column>
+					                <Text text="발주일" />
+					                </Column>
+					                <Column>
+					                <Text text="참조" />
+					                </Column>
+					                <Column>
+					                <Text text="금액" />
+					                </Column>
+					                <Column>
+					                <Text text="납기일" />
+					                </Column>
+					                <Column>
+					                <Text text="비고" />
+					                </Column>
+					                <Column>
+					                <Text text="삭제" />
+					                </Column>
+					            </columns>
+					            <items>
+					                <ColumnListItem
+					                    type="Navigation"
+					                    press="onPress">
+					                    <cells>
+					                        <Text text="{omodel2>num1}" />
+					                        <Text text="{omodel2>order_num}" />
+					                        <Text text="{omodel2>buyer}" />
+					                        <Text text="{omodel2>order_date}" />
+					                        <Text text="{omodel2>reference}" />
+					                        <Text text="{omodel2>price}" />
+					                        <Text text="{omodel2>due_date}" />
+					                        <Text text="{omodel2>remark}" />
+					                        <Button text="삭제" press="Delete" />
+					                    </cells>
+					                </ColumnListItem>
+					            </items>
+					        </Table>
+					        </l:HorizontalLayout>
+					        <!--  <Button icon="sap-icon://open-command-field" press="oButton1"  /> -->
+					    </VBox>
+							<l:HorizontalLayout>
+					        <Button text="분류관리" icon="sap-icon://action-settings" class="sapUiSmallMarginEnd button_classify"  press=".Classify" />
+					        <Button text="품목관리" icon="sap-icon://action-settings"  class="sapUiLargeMarginEnd button_manage" press=".ItemManage" />
+					        <Button text="등록"  press="Register" class="hbox button_red" />
+					    	</l:HorizontalLayout>
+			</VBox>
+	</ScrollContainer>
+        </l:content>
+	</l:HorizontalLayout>	
+	
+</mvc:View>

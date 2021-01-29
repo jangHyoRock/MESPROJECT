@@ -1,0 +1,10 @@
+2021:01:29 01:39:48.269 INFO  --- [RMI TCP Connection(162)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2021:01:29 01:39:48.273 INFO  --- [RMI TCP Connection(162)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:29 01:39:48.333 INFO  --- [RMI TCP Connection(162)-127.0.0.1] o.s.s.quartz.SchedulerFactoryBean : Shutting down Quartz Scheduler 
+2021:01:29 01:39:48.333 INFO  --- [RMI TCP Connection(162)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down. 
+2021:01:29 01:39:48.334 INFO  --- [RMI TCP Connection(162)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED paused. 
+2021:01:29 01:39:48.334 INFO  --- [RMI TCP Connection(162)-127.0.0.1] org.quartz.core.QuartzScheduler : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete. 
+2021:01:29 01:39:48.335 INFO  --- [RMI TCP Connection(162)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2021:01:29 01:39:48.336 INFO  --- [RMI TCP Connection(162)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021:01:29 01:39:48.340 INFO  --- [RMI TCP Connection(162)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:01:29 01:39:48.342 INFO  --- [RMI TCP Connection(162)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 

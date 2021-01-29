@@ -6,58 +6,175 @@
 	xmlns:l="sap.ui.layout"
 	controllerName="tips.mes.controller.contents.basicSetting.UserMgmt">
 
-	<l:HorizontalLayout class="sapViewInner">
-		<l:content>
-			<VBox>
-				<!-- Title & Description Area -->
-				<l:HorizontalLayout class="titleArea">
-					<!-- <Text text="{i18n>contents3Title}" class="headCopy" /> -->
-					<Text text="사용자관리" class="headCopy" />
-					<Text text="{i18n>contents3Description}" class="DescCopy" />
-				</l:HorizontalLayout>
+	 <l:HorizontalLayout class="sapViewInner">
+      <l:content>
+         <VBox>
+            <!-- Title & Description Area -->
+            <core:Fragment id="exportPrint" fragmentName="tips.mes.view.fragment.TitleDesc" type="XML" />
 
-				<!-- Overview Content & Table Area -->
-				<l:HorizontalLayout class="contentArea100">
-					<!-- Table Area -->
-					<VBox>
-						<Text text="Detail Information" class="subTitle" />
-						<t:Table id="idTable" selectionMode="None" rows="{product>/milk}" visibleRowCount="12" width="100%">
-							<t:columns>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Seasons" />
-									<t:template>
-										<Text text="{product>Seasons}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Revenue" />
-									<t:template>
-										<Text text="{product>Revenue}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Cost" />
-									<t:template>
-										<Text text="{product>Cost}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Target" />
-									<t:template>
-										<Text text="{product>Target}"/>
-									</t:template>
-								</t:Column>
-								<t:Column resizable="true" hAlign="Center">
-									<Label text="Budget" />
-									<t:template>
-										<Text text="{product>Budget}"/>
-									</t:template>
-								</t:Column>
-							</t:columns>
-						</t:Table>
-					</VBox>
-				</l:HorizontalLayout>
-			</VBox>
-		</l:content>
-	</l:HorizontalLayout>
+            <!-- Overview Content & Table Area -->
+            <l:HorizontalLayout class="contentArea1">
+               <!-- Card List & Chart -->
+               <!-- Table Area -->
+               <VBox>
+                  <t:Table id="idTable" selectionMode="None" rows="{product>/milk}" visibleRowCount="12" width="100%">
+                     <t:columns>
+                        <t:Column resizable="true" hAlign="Center">
+                           <Label text="이름" />
+                           <t:template>
+                              <Text text="{product>Seasons}"/>
+                           </t:template>
+                        </t:Column>
+                        <t:Column resizable="true" hAlign="Center">
+                           <Label text="ID" />
+                           <t:template>
+                              <Text text="{product>Revenue}"/>
+                           </t:template>
+                        </t:Column>
+                        <t:Column resizable="true" hAlign="Center">
+                           <Label text="휴대폰" />
+                           <t:template>
+                              <Text text="{product>Cost}"/>
+                           </t:template>
+                        </t:Column>
+                        <t:Column resizable="true" hAlign="Center">
+                           <Label text="부서" />
+                           <t:template>
+                              <Text text="{product>Target}"/>
+                           </t:template>
+                        </t:Column>
+                        <t:Column resizable="true" hAlign="Center">
+                           <Label text="직급" />
+                           <t:template>
+                              <Text text="{product>Budget}"/>
+                           </t:template>
+                        </t:Column>
+                                                <t:Column resizable="true" hAlign="Center">
+                           <Label text="직무" />
+                           <t:template>
+                              <Text text="{product>Budget}"/>
+                           </t:template>
+                        </t:Column>
+                                                <t:Column resizable="true" hAlign="Center">
+                           <Label text="입사일" />
+                           <t:template>
+                              <Text text="{product>Budget}"/>
+                           </t:template>
+                        </t:Column>
+                                                <t:Column resizable="true" hAlign="Center">
+                           <Label text="재직여부" />
+                           <t:template>
+                              <Text text="{product>Budget}"/>
+                           </t:template>
+                        </t:Column>
+                     </t:columns>
+                  </t:Table>
+               </VBox>
+               <VBox>
+                  <!-- Card First -->
+                  <l:VerticalLayout class="centerbox">
+                  	 <Text text="이름" class="UserMgmt_text" />
+                     <Input value="{omodel1>/user_name}" placeholder="이름" class="input" />
+                     <Text text="사번" class="UserMgmt_text"  />
+                     <Input value="{omodel1>/create_user}" placeholder="사번" class="input" />
+                     <HBox class="hbox">
+                     	<VBox>
+                     	<Text text="휴대폰" class="UserMgmt_text"  />
+	                    <Input value="{omodel1>/phone_number}" placeholder="휴대폰" class="input2" />
+	                    </VBox>
+	                    <VBox>
+	                    <Text text="생년월일" class="UserMgmt_text"  />
+	                    <DatePicker
+								placeholder="일자를 선택하세요" valueFormat="yyyy-MM-dd"
+								change="handleChange"
+								class="input2 calender"
+					            value="{omodel1>/birth_date}" />
+	                    </VBox>
+	                    <VBox>
+	                    <Text text="이메일" class="UserMgmt_text"  />
+	                    <Input value="{omodel1>/email}" placeholder="이메일" class="input" />
+	                    </VBox>
+                     </HBox>
+                     <Text text="주소" class="UserMgmt_text"  />
+                     <Input value="{omodel1>/address}" placeholder="주소" class="input" />
+                     <HBox>
+                     	<VBox class="UserMgmt_vbox">
+	                     <Text text="재직상태" class="UserMgmt_text"  />
+		                     <ActionSelect
+		                          items="{}"
+		                          autoAdjustWidth ="true">
+		                          <core:Item key="" text="{omodel1>/employment_status}" />
+		                     </ActionSelect>
+                     	</VBox>
+	                     <VBox>
+			                 <Text text="입사일" class="UserMgmt_text"  />
+		                     <DatePicker
+								placeholder="일자를 선택하세요" valueFormat="yyyy-MM-dd"
+								change="handleChange"
+								class="input calender"
+					            value="{omodel1>/join_date}" />
+	                     </VBox>
+                     </HBox>
+                     <HBox>
+                     	<VBox class="UserMgmt_vbox">
+			                 <Text text="부서" class="UserMgmt_text"  />
+		                     <ActionSelect
+		                          items="{}"
+		                          autoAdjustWidth ="true">
+		                          <core:Item key="" text="{omodel1>/department}" />
+		                     </ActionSelect>
+	                     </VBox>
+	                     <VBox class="UserMgmt_vbox">
+			                 <Text text="직급" class="UserMgmt_text"  />
+		                     <ActionSelect
+		                          items="{}"
+		                          autoAdjustWidth ="true">
+		                          <core:Item key="" text="{omodel1>/position}" />
+		                     </ActionSelect>
+	                     </VBox>
+	                     <VBox class="UserMgmt_vbox">
+			                 <Text text="직무" class="UserMgmt_text"  />
+		                     <Input value="{omodel1>/job}"  class="input " />
+		                     <!--  <ActionSelect
+		                          items="{}"
+		                          autoAdjustWidth ="true">
+		                          <core:Item key="" text="" />
+		                     </ActionSelect>-->
+	                     </VBox>
+                     </HBox>
+                    <!--   <HBox>
+                     	<VBox class="UserMgmt_vbox">
+                     		<Text text="시급 (원)" class="UserMgmt_text"  />
+                     		<Input value="" placeholder="원" class="input text_align" />
+                     	</VBox>
+                     	<VBox>
+                     		<Text text="월급 (원)" class="UserMgmt_text"  />
+                     		<Input value="" placeholder="원" class="input text_align" />
+                     	</VBox>
+                     </HBox>-->
+                     <HBox>
+                     	<VBox class="UserMgmt_vbox">
+                     		<Text text="아이디" class="UserMgmt_text"  />
+	                     	<Input value="{omodel1>/user_id}" placeholder="아이디" class="input" />
+	                     	<Text text="*영문 최소3자이상" class="text_reference"/>
+	                     	<Text text="*영,숫자만허용됩니다" class="text_reference" />
+                     	</VBox>
+                     	<VBox class="UserMgmt_vbox">
+                     		<Text text="비밀번호" class="UserMgmt_text"  />
+                     		<Input value="{omodel1>/password}" placeholder="비밀번호" class="input" type="Password" />
+                     	</VBox>
+                     	<VBox >
+                     		<Text text="비밀번호 확인" class="UserMgmt_text"  />
+                     		<Input value="" placeholder="비밀번호확인" class="input" type="Password" />
+                     		<Text text="*최소4자이상" class="text_reference" />
+                     	</VBox>
+                     </HBox>
+                     <Button text="저장" class="button" press="Insert" />
+                  </l:VerticalLayout>
+
+               </VBox>
+            </l:HorizontalLayout>
+         </VBox>
+      </l:content>
+   </l:HorizontalLayout>
 </mvc:View>

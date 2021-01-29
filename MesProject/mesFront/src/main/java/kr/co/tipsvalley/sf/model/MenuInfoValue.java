@@ -7,5 +7,7 @@ public interface MenuInfoValue {
 	public String getMenuname();
 	public String getIcon();
 	public String getMenudesc();
+	public String getMenuTitle();
+	public String getLocale();
 
 }

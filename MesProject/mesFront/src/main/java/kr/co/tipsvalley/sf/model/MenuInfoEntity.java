@@ -19,12 +19,9 @@ public class MenuInfoEntity implements Serializable
 	
     @Id
 
-    @Column(name="menu_id") private String menu_id;
-    @Column(name="disp_order",columnDefinition = "int8") private int disp_order;
-    @Column(name="p_menu_id",  nullable = true) private String p_menu_id;
-    @Column(name="menu_name", nullable = true) private String menu_name;
+    @Column(name="menu_id") private String menuid;
+    @Column(name="disp_order",columnDefinition = "int8") private int disporder;
+    @Column(name="p_menu_id",  nullable = true) private String pmenuid;
     @Column(name="icon", nullable = true) private String icon;
-    @Column(name="menu_desc", nullable = true) private String menu_desc;
-   
     
 }

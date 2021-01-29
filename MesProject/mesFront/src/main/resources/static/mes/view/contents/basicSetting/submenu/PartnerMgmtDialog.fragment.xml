@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Dialog
+        id="partnerMgmtDialog"
+        title="신규 거래처 등록"
+        contentWidth="50em">
+        <HBox class="HBox-rows">
+            <Text text="구분" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="division"/>
+            <Text text="업체 담당자" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="customer_person"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="거래처명" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="customer_name"/>
+            <Text text="담당자 휴대전화" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="person_phone_number"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="업체코드" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="customer_code"/>
+            <Text text="팩스번호" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="fax_number"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="대표" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="representative"/>
+            <Text text="Email" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="email"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="사업자등록번호" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="business_license_number"/>
+            <Text text="주소" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="address"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="업태" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="business_actual"/>
+            <Text text="계좌번호" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="bank_account_number"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="업종" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="business"/>
+            <Text text="은행명" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="bank_name"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="유선전화" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="phone"/>
+            <Text text="예금주" class="sapUiSmallMarginEnd rows-width"/>
+            <Input id="depositor"/>
+        </HBox>
+        <HBox class="HBox-rows">
+            <Text text="비고" class="sapUiSmallMarginEnd rows-width"/>
+            <TextArea id="remark"/>
+        </HBox>
+        <Button
+            text="저장"
+            press=".onSaveDialog"/>
+        <Button
+            text="닫기"
+            press=".onCloseDialog"/>
+    </Dialog>
+</core:FragmentDefinition>

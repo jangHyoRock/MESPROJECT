@@ -10,11 +10,7 @@
 		<l:content>
 			<VBox>
 				<!-- Title & Description Area -->
-				<l:HorizontalLayout class="titleArea">
-					<!-- <Text text="{i18n>contents3Title}" class="headCopy" /> -->
-					<Text text="History2" class="headCopy" />
-					<Text text="{i18n>contents3Description}" class="DescCopy" />
-				</l:HorizontalLayout>
+				<core:Fragment id="exportPrint" fragmentName="tips.mes.view.fragment.TitleDesc" type="XML" />
 
 				<!-- Overview Content & Table Area -->
 				<l:HorizontalLayout class="contentArea100">

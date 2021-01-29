@@ -1,0 +1,77 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout" >
+    <Dialog
+        id="classify"
+        title="분류관리"
+        contentWidth="50%">
+        <content>
+        	<VBox class="centerbox">
+	            <HBox>
+	                <Title text="분류 조회/관리" class="secondfont" />
+	            </HBox> 
+	            <Text text="분류등록시 유형과 분류를 모두 입력하셔야 등록이 가능합니다" class="sapUiSmallMarginBottom" />
+	            <HBox>
+	                <Input value="" placeholder="유형입력" />
+	                <Input value="" placeholder="분류입력" class="sapUiLargeMarginBegin" />
+	                <Button text="추가" class="button_add" />
+	            </HBox>
+	            <HBox class="sapUiTinyMarginBottom">
+	                 <Text text="Show" class="selectext sapUiTinyMarginEnd" />
+	                 <ActionSelect
+	                     items="{
+	                         path : 'combo>/ComboBox'
+	                     }"
+	                     autoAdjustWidth ="true"
+	                     class=" select sapUiTinyMarginEnd">
+	                     <core:Item key="{combo>key}" text="{combo>text}" />
+	                 </ActionSelect>
+	                 <Text text="entries" class="selectext" />
+	             	 <HBox class="hbox">
+		                 <Text text="Search" class="selectext sapUiTinyMarginEnd" />
+		                 <ToolbarSpacer />
+		                 <SearchField  
+		                 	search=".onFilterInvoices"
+		                 	showSearchButton="false"
+		                 	class="field1" />
+	           		</HBox>
+	             </HBox>
+	
+	            <l:HorizontalLayout class="table">
+	                <Table>
+	                <columns>
+	                    <Column>
+	                    <Text text="유형" />
+	                    </Column>
+	                    <Column>
+	                    <Text text="분류" />
+	                    </Column>
+	                    <Column>
+	                    <Text text="상태" />
+	                    </Column>
+	                </columns>
+	                <items>
+	                    <ColumnListItem>
+	                        <cells>
+	                            <Text text="자제" />
+	                            <Text text="필요자제" />
+	                            <Switch state="true" customTextOn=" " customTextOff=" ">
+	                                <layoutData>
+	                                    <FlexItemData growFactor="1" />
+	                                </layoutData>
+	                            </Switch>
+	                        </cells>
+	                    </ColumnListItem>
+	                </items>
+	            </Table>
+	            </l:HorizontalLayout>
+			</VBox>
+        </content>
+        <beginButton>
+            <Button
+                text="닫기"
+                press=".onCloseDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
